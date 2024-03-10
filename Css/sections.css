@@ -164,3 +164,44 @@
     margin: 10px;
     height: 170px; /* Adjust based on your preference */
 }
+
+@media (max-width: 600px) {
+    .content-row {
+        margin: 0px 0; /* Reduced margin between rows for better space utilization */
+        padding: 0 1%; /* Keep or adjust side padding */
+    }
+
+    .row-title {
+        font-size: 18px; /* Adjust title size as needed */
+        margin-bottom: 10px; /* Reduce space between title and content */
+    }
+
+    .row-item-wrapper {
+        margin: 25px 0px;
+        height: auto; /* Adjust height as needed */
+        align-items: center;
+    }
+
+    .row-item {
+        width: 140px; /* Adjust width for vertical rectangles */
+        height: 250px; /* Increase height for vertical rectangles */
+    }
+
+    .item-title {
+        font-size: 0.9rem; /* Adjust title size within each item */
+    }
+
+    .row-item img {
+        height: 100%; /* Ensure image covers new item height */
+        
+    }
+
+    .overlay {
+        font-size: 0.8rem; /* Adjust overlay text size */
+    }
+
+    /* Optional: Adjust or hide scroll arrows for mobile, as swipe scrolling is more common */
+    .scroll-arrow {
+        display: none; /* Hide arrows if unnecessary on mobile */
+    }
+}

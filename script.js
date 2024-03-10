@@ -103,3 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setupArrowListeners(rightArrow, 1);
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navigation = document.querySelector('.navigation');
+    
+    hamburger.addEventListener('click', () => {
+        navigation.classList.toggle('active');
+    });
+});

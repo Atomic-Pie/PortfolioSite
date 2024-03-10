@@ -1,30 +1,7 @@
-/* General styles */
-:root {
-    --main-bg-color: #141414;
-    --footer-nav-bg-color: #141414;
-    --text-color: white;
-    --link-color: white;
-    --link-hover-color: #fff;
-    --search-bg-color: black;
-    --button-bg-color: red;
-    --placeholder-color: #ccc;
-    --overlay-bg-color: rgba(0, 0, 0, 0.7); /* Assuming you have an overlay background */
-}
-
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--main-bg-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-}
-
 /* Navbar styles */
 .navbar {
     transition: top 0.5s;
-    background-color: var(--footer-nav-bg-color);
+    background-color: #141414;
     padding: 20px 50px;
     width: 100%;
     box-sizing: border-box;
@@ -40,50 +17,50 @@ body, html {
 
 .navbar-content {
     justify-content: space-between;
-    width: 100%; /* Ensure the navbar-content takes full width */
+    width: 100%;
 }
 
 .navigation {
-    margin-left: 20px; /* Adds some space between the logo and navigation links */
+    margin-left: 20px;
 }
 
 .nav-link, .nav-icon {
-    color: var(--link-color);
+    color: white;
     text-decoration: none;
     margin-left: 20px;
-    font-size: 1.2vw;
+    font-size: 16px; /* Adjusted for better readability */
 }
 
 .nav-link:hover, .nav-icon:hover {
-    color: var(--link-hover-color);
+    color: #fff;
     text-decoration: underline;
 }
 
 .logo {
-    height: 50px; /* Adjust based on actual logo size */
+    height: 50px;
 }
 
 /* Search container */
 .search-container {
     display: flex;
     align-items: center;
-    background-color: var(--search-bg-color);
-    border-radius: 20px; /* Rounded corners for the container */
-    padding: 5px; /* Padding around the edges */
+    background-color: black;
+    border-radius: 20px;
+    padding: 5px;
 }
 
 .search-input {
     flex-grow: 1;
     background-color: transparent;
     border: none;
-    color: var(--text-color);
+    color: white;
     margin-right: 10px;
     padding: 10px 20px;
-    font-size: 1vw;
+    font-size: 16px; /* Adjusted for better readability */
 }
 
 .search-input::placeholder {
-    color: var(--placeholder-color);
+    color: #ccc;
 }
 
 .search-input:focus, .search-button {
@@ -93,11 +70,70 @@ body, html {
 .search-button {
     background-color: transparent;
     border: none;
-    color: var(--text-color);
+    color: white;
     cursor: pointer;
     padding: 5px 10px;
+    font-size: 20px; /* Adjusted for better visibility */
 }
 
-.search-button i {
-    font-size: 1.2vw;
+/* Mobile styles */
+@media (max-width: 600px) {
+    .navbar {
+        padding: 10px 20px; /* Reduced padding */
+    }
+
+    .navbar-left, .navbar-right, .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin: 5px 0; /* Reduced margin and made vertical */
+    }
+
+    .logo {
+        height: 40px; /* Reduced logo size */
+    }
+
+    .search-container {
+        margin-top: 10px; /* Added space above search in mobile layout */
+        width: 100%; /* Full width */
+    }
+
+    .search-input, .search-button {
+        font-size: 14px; /* Scaled down text for search components */
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between; /* Keep logo on one side and search on the other */
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+
+    .navigation, .nav-link {
+        display: none; /* Hide navigation links */
+    }
+
+    .logo {
+        height: 40px; /* Adjust logo size for mobile */
+    }
+
+    .search-container {
+        flex-grow: 1; /* Allow search container to take available space */
+        margin-left: 10px; /* Add some space between logo and search box */
+    }
+
+    .search-input {
+        font-size: 14px; /* Adjust font size for readability */
+    }
+
+    .search-button i {
+        font-size: 20px; /* Adjust icon size for better touch target */
+    }
+
+    .footer-content a {
+        gap: 10px; /* Adjust gap for better layout */
+        font-size: 14px; /* Make text smaller to fit better */
+    }
 }

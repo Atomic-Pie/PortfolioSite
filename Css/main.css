@@ -17,9 +17,9 @@ body, html {
 .footer-content a {
     color: #ccc; 
     text-decoration: none; 
-    display: flex; 
+    display: inline-flex; 
     align-items: center; 
-    gap: 5px; 
+    gap: 5px;
 }
 
 .footer-content a:hover {
@@ -35,6 +35,7 @@ body, html {
 }
 
 .footer-content {
+    width: 100%;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -43,4 +44,19 @@ body, html {
 
 .footer-content p {
     margin: 0; 
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .footer-content a span.text {
+        display: none; /* Hide the text in mobile view */
+    }
+
+    .footer-content a i {
+        font-size: 15px; /* Adjust the size of icons as needed */
+    }
+
+    .footer-content a {
+        padding: 0px; /* Adjust as necessary for mobile */
+    }
 }

@@ -2,6 +2,8 @@
 .featured-section {
     position: relative;
     width: 100%;
+    margin: 0;
+    padding: 0;
     height: 100vh;
     color: white;
     display: flex;
@@ -66,5 +68,12 @@
     100% {
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Hide elements that are not critical */
+    .featured-description {
+        display: none; /* For instance, hide long descriptions */
     }
 }
