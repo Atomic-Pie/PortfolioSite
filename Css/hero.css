@@ -4,12 +4,11 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 100%;
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 50px;
 }
 
 .featured-title,
@@ -17,6 +16,10 @@
 .featured-buttons .button {
     opacity: 0; /* Initially hide the elements */
     animation-fill-mode: forwards; /* Keep the state as it is at the end of the animation */
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    padding-left: 4%;
 }
 
 .featured-background {
@@ -51,13 +54,13 @@
     display: inline-block; 
     animation: popUp 0.5s ease-out forwards;
     animation-delay: 0.3s; 
-
     padding: 10px 20px;
     background-color: red;
     border: none;
     color: white;
     margin-right: 10px;
     cursor: pointer;
+    margin-left: 4%;
 }
 
 @keyframes popUp {
