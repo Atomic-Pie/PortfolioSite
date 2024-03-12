@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="Css/nav.css">
     <link rel="stylesheet" href="Css/hero.css">
     <link rel="stylesheet" href="Css/sections.css">
+    <link rel="stylesheet" href="Css/focused.css">
     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -30,13 +31,29 @@
                 </div>
             </div>
         </div>
-    </header>    
+    </header>
+    <div id="focusedItem" class="focused-item-hidden">
+        <div class="focused-backdrop" onclick="closeFocusedView()">
+            <div class="focused-content" onclick="event.stopPropagation()"> <!-- Prevents backdrop click from closing view -->
+                <button class="close-btn" onclick="closeFocusedView()">X</button>
+                <div class="image-container">
+                    <img id="focusedImage" src="" alt="Focused Item">
+                    <div class="image-fade-out"></div> <!-- Gradient overlay -->
+                </div>
+                <div class="focused-details">
+                    <h2 id="focusedTitle">Title Here</h2>
+                    <p id="focusedDescription">Description here...</p>
+                    <!-- Add more details as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
     <main class="featured-section" id="home">
         <img src="Images/Csanad.png" alt="Featured Background" class="featured-background">
         <h1 class="featured-title">Csanad Alattyanyi</h1>
         <p class="featured-description">im like super hacker man, so cool and good and yeah super cool again. i do all the hacks coz im smart, no wait, im cool and smart, lol. hacking is like, my thing, you know? cuz im so good at it and all. people always like "wow ur cool" and im like "yeah i know right, im cool and good". i hack things, just like, zap and boom, done, coz im that good and cool, and smart too, did i say cool? yeah, cool and smart, that’s me. totally.</p>
         <div class="featured-buttons">
-            <button class="button">More Info</button>
+            <button onclick="openFocusedView(this, 'Csanad Alattyanyi', 'Images/temp.jpg', 'Example description')" class="button">More Info</button>
         </div>
     </main>    
     <section class="content-row" id="new_popular">
@@ -46,7 +63,7 @@
             <div class="scroll-content">
                 <div class="row">
                     <div class="row-item-wrapper">
-                        <div class="row-item">
+                        <div onclick="openFocusedView(this)" class="row-item">
                             <img src="Images/temp.jpg" alt="Highlight 1">
                             <div class="overlay">
                                 <div class="item-title">Project Name 1</div>
@@ -54,7 +71,7 @@
                         </div>
                     </div>
                     <div class="row-item-wrapper">
-                        <div class="row-item">
+                        <div onclick="openFocusedView(this)" class="row-item">
                             <img src="Highlight2.jpg" alt="Highlight 2">
                             <div class="overlay">
                                 <div class="item-title">Project Name 2</div>
@@ -62,7 +79,7 @@
                         </div>
                     </div>
                     <div class="row-item-wrapper">
-                        <div class="row-item">
+                        <div onclick="openFocusedView(this)" class="row-item">
                             <img src="Highlight3.jpg" alt="Highlight 3">
                             <div class="overlay">
                                 <div class="item-title">Project Name 3</div>
@@ -80,7 +97,7 @@
             <div class="scroll-arrow left"><i class="fas fa-chevron-left"></i></div>
             <div class="row">
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/TUD.png" alt="TUD Graduation">
                         <div class="overlay">
                             <div class="item-title">TUD Graduation</div>
@@ -88,7 +105,7 @@
                     </div>
                 </div>
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/Hackathon.jpg" alt="Tallaght Hospital Healthcare Hackathon">
                         <div class="overlay">
                             <div class="item-title">Tallaght Hospital Healthcare Hackathon</div>
@@ -96,7 +113,7 @@
                     </div>
                 </div>
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/nvidia.png" alt="Nvidia Certificate in Fundamentals of Deep Learning">
                         <div class="overlay">
                             <div class="item-title">Nvidia Certificate in Fundamentals of Deep Learning</div>
@@ -104,7 +121,7 @@
                     </div>
                 </div>
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/HCAIM.jpg" alt="Blended IP Week at HCAIM">
                         <div class="overlay">
                             <div class="item-title">Blended IP Week at HCAIM</div>
@@ -121,7 +138,7 @@
             <div class="scroll-arrow left"><i class="fas fa-chevron-left"></i></div>
             <div class="row">
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Project1.jpg" alt="Notflix Portfolio">
                         <div class="overlay">
                             <div class="item-title">Notflix Portfolio</div>
@@ -129,7 +146,7 @@
                     </div>
                 </div>
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/Minifig.jpg" alt="Minifig Collector">
                         <div class="overlay">
                             <div class="item-title">Minifig Collector</div>
@@ -137,7 +154,7 @@
                     </div>
                 </div>
                 <div class="row-item-wrapper">
-                    <div class="row-item">
+                    <div onclick="openFocusedView(this)" class="row-item">
                         <img src="Images/AgileMate.jpg" alt="Agile Mate">
                         <div class="overlay">
                             <div class="item-title">Agile Mate</div>

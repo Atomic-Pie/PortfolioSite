@@ -112,3 +112,39 @@ document.addEventListener('DOMContentLoaded', () => {
         navigation.classList.toggle('active');
     });
 });
+
+function openFocusedView(element, title = '', imageSrc = '', description = '') {
+    // Extract elements only if necessary
+    const imageElement = !imageSrc && element ? element.querySelector('img') : null;
+    const titleElement = !title && element ? element.querySelector('.item-title') : null;
+    // For description, you might need a similar approach depending on where it's coming from
+    
+    // Update each property only if it was not provided and is available from the element
+    if (!title && titleElement) {
+        title = titleElement.textContent;
+    }
+
+    if (!imageSrc && imageElement) {
+        imageSrc = imageElement.src;
+    }
+
+    // Update the description if necessary
+    // Note: Update this logic according to how your descriptions are structured.
+    if (!description) {
+        // Assuming you might have a .item-description class or similar for descriptions
+        const descriptionElement = element ? element.querySelector('.item-description') : null;
+        description = descriptionElement ? descriptionElement.textContent : 'Default description';
+    }
+
+    // Set the content of the focused view
+    document.getElementById('focusedTitle').textContent = title;
+    document.getElementById('focusedImage').src = imageSrc;
+    document.getElementById('focusedImage').alt = title;
+    document.getElementById('focusedDescription').textContent = description;
+    document.getElementById('focusedItem').classList.remove('focused-item-hidden');
+}
+
+
+function closeFocusedView() {
+    document.getElementById('focusedItem').classList.add('focused-item-hidden');
+}
