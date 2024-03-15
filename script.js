@@ -117,7 +117,7 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     // Extract elements only if necessary
     const imageElement = !imageSrc && element ? element.querySelector('img') : null;
     const titleElement = !title && element ? element.querySelector('.item-title') : null;
-    // For description, you might need a similar approach depending on where it's coming from
+    const descriptionElement = element.querySelector('.item-description');
     
     // Update each property only if it was not provided and is available from the element
     if (!title && titleElement) {
@@ -142,9 +142,11 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     document.getElementById('focusedImage').alt = title;
     document.getElementById('focusedDescription').textContent = description;
     document.getElementById('focusedItem').classList.remove('focused-item-hidden');
+    document.body.style.overflow = 'hidden';
 }
 
 
 function closeFocusedView() {
+    document.body.style.overflow = '';
     document.getElementById('focusedItem').classList.add('focused-item-hidden');
 }

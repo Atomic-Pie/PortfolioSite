@@ -7,7 +7,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 200%;
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: flex-start; /* Keep the content starting from the top */
@@ -17,15 +17,19 @@
 }
 
 .focused-content {
-    position: relative; /* Changed to position relative within the fixed backdrop */
-    margin-top: 3.5vh; /* Adjust space from the top based on your navbar's height */
+    margin-top: 3.5vh;
     background-color: #141414;
     color: white;
-    width: 50%; /* Adjust width to your requirement */
-    min-height: 95%; /* Make the content tall enough */
-    border-radius: 8px;
-    overflow: hidden; /* Hide overflow to allow fade effect on image */
+    width: 50%; /* Adjust if necessary */
+    min-height: 96.5vh; /* Changed from 95% */
+    max-height: 96.5vh; /* This ensures the modal is not taller than the viewport */
+    overflow-y: auto; /* Keeps the overflow as auto */
+    border-radius: 10px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    overflow-y: auto; /* Keep ability to scroll */
 }
+
 
 .close-btn {
     position: absolute;
@@ -40,25 +44,15 @@
 }
 
 .focused-details {
-    margin-top: 20px;
+    padding: 10px 0 10px 30px;
 }
 
 /* Styling for the image */
 #focusedImage {
     width: 100%; /* Make the image full width of the focused-content */
-    max-height: 40%; /* Image takes up 60% of the container's height */
-    object-fit:contain; /* Cover the area without losing aspect ratio */
+    max-height: 60vh; /* Image takes up 60% of the container's height */
+    object-fit:cover; /* Cover the area without losing aspect ratio */
     position: relative; /* Relative position to allow for gradient overlay */
-}
-
-/* Add gradient fade-out effect on the image */
-.image-fade-out {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 20%; /* Adjust the height of the fade effect as needed */
-    background-image: linear-gradient(to top, #141414, #141414, transparent);
 }
 
 .image-container {
@@ -66,4 +60,103 @@
     width: 100%; /* Ensure this matches your layout needs */
     height: 60%; /* Adjust based on your focused-content height */
     overflow: hidden; /* This ensures the fade-out does not spill outside */
+    display: inline-block; /* Or block, depending on your layout */
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Adjust the height of the fade effect */
+    background: linear-gradient(transparent, #141414); /* Starts transparent and fades to the background color */
+}
+
+.image-container img {
+    display: block;
+    width: 100%; /* This will make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#focusedTitle {
+    position: absolute;
+    bottom: 0; 
+    left: 0; 
+    transform: translate(0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white; /* Text color */
+    padding: 10px 30px;
+    margin: 0px;
+    text-align: left;
+    font-size: 2rem;
+    z-index: 2;
+}
+
+.focused-stats {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.focused-stats span {
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+#focusedDescription {
+    font-size: 16px;
+    line-height: 1.4;
+    color: white;
+}
+
+.focused-left, .focused-right {
+    width: 50%; /* Take up half the parent's width */
+    display: inline-block; /* Make them side by side */
+    vertical-align: top; /* Align at the top */
+}
+
+.focused-left {
+    width: 60%; /* Adjust if necessary */
+}
+
+.focused-right {
+    width: 30%; /* Adjust if necessary */
+}
+
+.focused-right {
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 20px; /* Provide some spacing */
+    margin-left: 20px;
+    color: white; /* Text color */
+    border-radius: 10px; /* Optional: rounds corners */
+    max-width: calc(40% - 2 * (10px) - 20px); /* Adjust width as needed */
+    width: auto;
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+.focused-genres, .focused-attributes {
+    margin-bottom: 15px; /* Spacing between paragraphs */
+    font-size: 16px; /* Adjust based on your design */
+}
+
+.focused-genres > .label, .focused-attributes > .label {
+    color: gray; 
+    margin-right: 5px; 
+}
+
+.focused-match {
+    color: limegreen;
+}
+
+.text-container {
+    text-align: justify;
+    text-justify: inter-word; /* Improves spacing between words */
+}
+
+.focused-content::-webkit-scrollbar {
+    display: none; /* This will hide the scrollbar in Webkit browsers */
 }
