@@ -114,12 +114,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function openFocusedView(element, title = '', imageSrc = '', description = '') {
-    // Extract elements only if necessary
+    // Extract elements and set content as before
     const imageElement = !imageSrc && element ? element.querySelector('img') : null;
     const titleElement = !title && element ? element.querySelector('.item-title') : null;
     const descriptionElement = element.querySelector('.item-description');
-    
-    // Update each property only if it was not provided and is available from the element
+
     if (!title && titleElement) {
         title = titleElement.textContent;
     }
@@ -128,25 +127,88 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
         imageSrc = imageElement.src;
     }
 
-    // Update the description if necessary
-    // Note: Update this logic according to how your descriptions are structured.
-    if (!description) {
-        // Assuming you might have a .item-description class or similar for descriptions
-        const descriptionElement = element ? element.querySelector('.item-description') : null;
-        description = descriptionElement ? descriptionElement.textContent : 'Default description';
+    if (!description && descriptionElement) {
+        description = descriptionElement.textContent;
     }
 
-    // Set the content of the focused view
     document.getElementById('focusedTitle').textContent = title;
     document.getElementById('focusedImage').src = imageSrc;
     document.getElementById('focusedImage').alt = title;
     document.getElementById('focusedDescription').textContent = description;
     document.getElementById('focusedItem').classList.remove('focused-item-hidden');
     document.body.style.overflow = 'hidden';
+
+    const backdrop = document.querySelector('.focused-backdrop');
+    backdrop.style.display = 'flex'; // Show the backdrop
+
+    // Define final size and scale, then call animateFocusedView
+    const finalWidth = window.innerWidth * 0.8; // Max width, but will be limited to 50% in CSS
+    const finalHeight = window.innerHeight * 0.965; // Based on final styles
+    const initialScale = 0.1; // Starting scale
+    animateFocusedView(element, finalWidth, finalHeight, initialScale);
 }
 
+
+function animateFocusedView(element, finalWidth, finalHeight, initialScale) {
+    const focusedContent = document.querySelector('.focused-content');
+    const rect = element.getBoundingClientRect(); // Get clicked element's dimensions and position
+
+    // Calculate center position for the final state
+    const finalTop = '3.5vh';
+    const finalLeft = '25%'; // Since final width is 50% of the viewport
+
+    // Set initial state mimicking 'scale(0.1)' using size and position
+    focusedContent.style.width = `${finalWidth * initialScale}px`;
+    focusedContent.style.height = `${finalHeight * initialScale}px`;
+    focusedContent.style.top = `${rect.top + (rect.height / 2) - (finalHeight * initialScale / 2)}px`;
+    focusedContent.style.left = `${rect.left + (rect.width / 2) - (finalWidth * initialScale / 2)}px`;
+    focusedContent.style.opacity = '0'; // Start invisible for a fade-in effect
+
+    setTimeout(() => {
+        // Apply the final styles with transition for smooth animation
+        focusedContent.style.transition = 'all 0.5s ease-in-out';
+        focusedContent.style.width = ''; // Set to final width
+        focusedContent.style.height = ''; // Set to final height
+        focusedContent.style.top = finalTop; // Center vertically based on final styles
+        focusedContent.style.left = finalLeft; // Center horizontally
+        focusedContent.style.opacity = '1';
+
+    }, 10); // Short delay to ensure the initial state is rendered first
+}
 
 function closeFocusedView() {
-    document.body.style.overflow = '';
-    document.getElementById('focusedItem').classList.add('focused-item-hidden');
+    const backdrop = document.querySelector('.focused-backdrop');
+    backdrop.style.display = 'none'; // Hide the backdrop
+    const focusedContent = document.querySelector('.focused-content');
+    focusedContent.style.transition = 'none'; // Remove transition to reset without animation
 }
+
+
+let clickStartedInside = false;
+
+function setupFocusedModal() {
+    const focusedBackdrop = document.querySelector('.focused-backdrop');
+    const focusedContent = document.querySelector('.focused-content');
+
+    // Check if mousedown started inside focused content
+    focusedContent.addEventListener('mousedown', () => {
+        clickStartedInside = true;
+    });
+
+    // This prevents the modal from closing when clicking inside the content
+    focusedContent.addEventListener('click', (event) => {
+        event.stopPropagation();
+    });
+
+    // Reset flag after mouseup occurs anywhere in the document
+    document.addEventListener('mouseup', (event) => {
+        if (!clickStartedInside && !focusedContent.contains(event.target)) {
+            closeFocusedView();
+        }
+        clickStartedInside = false; // Reset for the next action
+    });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    setupFocusedModal();
+});
