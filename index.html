@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="Css/hero.css">
     <link rel="stylesheet" href="Css/sections.css">
     <link rel="stylesheet" href="Css/focused.css">
-    <script src="script.js"></script>
+    <script src="Scripts/builder.js"></script>
+    <script src="Scripts/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -64,132 +65,14 @@
         <div class="featured-buttons">
             <button onclick="openFocusedView(this, 'Csanad Alattyanyi', 'Images/temp.jpg', 'Example description')" class="button">More Info</button>
         </div>
-    </main>    
-    <section class="content-row" id="new_popular">
-        <h2 class="row-title">New & Popular</h2>
-        <div class="scroll-container">
-            <div class="scroll-arrow left"><i class="fas fa-chevron-left"></i></div>
-            <div class="scroll-content">
-                <div class="row">
-                    <div class="row-item-wrapper">
-                        <div onclick="openFocusedView(this)" class="row-item">
-                            <img src="Images/temp.jpg" alt="Highlight 1">
-                            <div class="overlay">
-                                <div class="item-title">Project Name 1</div>
-                            </div>
-                            <p class="item-description hidden">Default</p>
-                        </div>
-                    </div>
-                    <div class="row-item-wrapper">
-                        <div onclick="openFocusedView(this)" class="row-item">
-                            <img src="Highlight2.jpg" alt="Highlight 2">
-                            <div class="overlay">
-                                <div class="item-title">Project Name 2</div>
-                            </div>
-                            <p class="item-description hidden">Default</p>
-                        </div>
-                    </div>
-                    <div class="row-item-wrapper">
-                        <div onclick="openFocusedView(this)" class="row-item">
-                            <img src="Highlight3.jpg" alt="Highlight 3">
-                            <div class="overlay">
-                                <div class="item-title">Project Name 3</div>
-                            </div>
-                            <p class="item-description hidden">Default</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-arrow right"><i class="fas fa-chevron-right"></i></div>
-        </div>
-    </section>
-    <section class="content-row" id="achievements">
-        <h2 class="row-title">Achievements</h2>
-        <div class="scroll-container">
-            <div class="scroll-arrow left"><i class="fas fa-chevron-left"></i></div>
-            <div class="row">
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/TUD.png" alt="TUD Graduation">
-                        <div class="overlay">
-                            <div class="item-title">TUD Graduation</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/Hackathon.jpg" alt="Tallaght Hospital Healthcare Hackathon">
-                        <div class="overlay">
-                            <div class="item-title">Tallaght Hospital Healthcare Hackathon</div>
-                        </div>
-                        <p class="item-description hidden">During the 2nd annual Health Hackathon, hosted by TU Dublin and Tallaght University Hospital, I was part of a diverse team that tackled real-world healthcare problems. Our project was a Warfarin Patient App designed for better home monitoring of patients. This 24-hour event was an intensive experience, blending collaboration, creativity, and learning. We received guidance from experts in healthcare, data security, and cloud computing, which helped us shape a patient-centered solution. Our concept was recognized for its practicality and potential for positive impact on patient care. This experience highlighted the importance of teamwork, quick thinking, and applying theoretical knowledge to practical challenges.</p>
-                    </div>
-                </div>
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/nvidia.png" alt="Nvidia Certificate in Fundamentals of Deep Learning">
-                        <div class="overlay">
-                            <div class="item-title">Nvidia Certificate in Fundamentals of Deep Learning</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/HCAIM.jpg" alt="Blended IP Week at HCAIM">
-                        <div class="overlay">
-                            <div class="item-title">Blended IP Week at HCAIM</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-arrow right"><i class="fas fa-chevron-right"></i></div>
-        </div>
-    </section>
-    <section class="content-row" id="projects">
-        <h2 class="row-title">Projects</h2>
-        <div class="scroll-container">
-            <div class="scroll-arrow left"><i class="fas fa-chevron-left"></i></div>
-            <div class="row">
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Project1.jpg" alt="Notflix Portfolio">
-                        <div class="overlay">
-                            <div class="item-title">Notflix Portfolio</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/Minifig.jpg" alt="Minifig Collector">
-                        <div class="overlay">
-                            <div class="item-title">Minifig Collector</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-                <div class="row-item-wrapper">
-                    <div onclick="openFocusedView(this)" class="row-item">
-                        <img src="Images/AgileMate.jpg" alt="Agile Mate">
-                        <div class="overlay">
-                            <div class="item-title">Agile Mate</div>
-                        </div>
-                        <p class="item-description hidden">Default</p>
-                    </div>
-                </div>
-            </div>
-            <div class="scroll-arrow right"><i class="fas fa-chevron-right"></i></div>
-        </div>
-    </section>
-    <footer class="site-footer">
-        <div class="footer-content">
-            <a href="mailto:example@example.com" class="footer-link"><i class="fas fa-envelope"></i> <span class="text">example@example.com</span></a>
-            <a href="https://www.linkedin.com" class="footer-link" target="_blank"><i class="fab fa-linkedin"></i> <span class="text">linkedin.com/in/yourprofile</span></a>
-            <a href="https://www.github.com" class="footer-link" target="_blank"><i class="fab fa-github"></i> <span class="text">github.com/yourusername</span></a>
-        </div>
-    </footer>    
+    </main>
+    <div id="sections"></div>    
 </body>
+<footer class="site-footer">
+    <div class="footer-content">
+        <a href="mailto:example@example.com" class="footer-link"><i class="fas fa-envelope"></i> <span class="text">example@example.com</span></a>
+        <a href="https://www.linkedin.com" class="footer-link" target="_blank"><i class="fab fa-linkedin"></i> <span class="text">linkedin.com/in/yourprofile</span></a>
+        <a href="https://www.github.com" class="footer-link" target="_blank"><i class="fab fa-github"></i> <span class="text">github.com/yourusername</span></a>
+    </div>
+</footer>  
 </html>

@@ -1,0 +1,121 @@
+{
+    "sections": [
+        {
+            "id": "achievements",
+            "type": "content-row",
+            "title": "Achievements",
+            "items": [
+                {
+                    "new_popular": "True",
+                    "imageSrc": "Images/TUD.png",
+                    "title": "TUD Graduation",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "True",
+                    "imageSrc": "Images/Hackathon.jpg",
+                    "title": "Tallaght Hospital Healthcare Hackathon",
+                    "description": "During the 2nd annual Health Hackathon, hosted by TU Dublin and Tallaght University Hospital, I was part of a diverse team that tackled real-world healthcare problems. Our project was a Warfarin Patient App designed for better home monitoring of patients. This 24-hour event was an intensive experience, blending collaboration, creativity, and learning. We received guidance from experts in healthcare, data security, and cloud computing, which helped us shape a patient-centered solution. Our concept was recognized for its practicality and potential for positive impact on patient care. This experience highlighted the importance of teamwork, quick thinking, and applying theoretical knowledge to practical challenges."
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/nvidia.png",
+                    "title": "Nvidia Certificate in Fundamentals of Deep Learning",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/HCAIM.jpg",
+                    "title": "Blended IP Week at HCAIM",
+                    "description": "Default"
+                }
+            ]
+        },
+        {
+            "id": "projects",
+            "type": "content-row",
+            "title": "Projects",
+            "items": [
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Project1.jpg",
+                    "title": "Notflix Portfolio",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "True",
+                    "imageSrc": "Images/Minifig.jpg",
+                    "title": "Minifig Collector",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/AgileMate.jpg",
+                    "title": "Agile Mate",
+                    "description": "Default"
+                }
+            ]
+        },
+        {
+            "id": "Test",
+            "type": "content-row",
+            "title": "Test",
+            "items": [
+                {
+                    "new_popular": "True",
+                    "imageSrc": "Images/temp.jpg",
+                    "title": "Project Name 1",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight2.jpg",
+                    "title": "Project Name 2",
+                    "description": "Default"
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Highlight3.jpg",
+                    "title": "Project Name 3",
+                    "description": "Default"
+                }
+            ]
+        }
+    ]
+}
