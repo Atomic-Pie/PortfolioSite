@@ -1,47 +1,79 @@
-document.addEventListener('DOMContentLoaded', () => {
+import { dataStore } from './dataStore.js';
 
-    // Define a custom event named 'myEvent'
-    const myEvent = new CustomEvent('myEvent', {
-        detail: {
-            message: 'Your custom message here',
-            time: new Date(), // You can pass any data you want
-        },
-        bubbles: true, // Whether the event should bubble up through the DOM
-        cancelable: true // Whether the event is cancelable
-    });
+document.addEventListener('DOMContentLoaded', () => {
 
     // Function to create a DOM element from a section item
     function createSectionItem(item) {
         const itemWrapper = document.createElement('div');
         itemWrapper.className = 'row-item-wrapper';
-
+    
         const rowItem = document.createElement('div');
         rowItem.className = 'row-item';
         rowItem.setAttribute('onclick', "openFocusedView(this)");
-
+    
         const img = document.createElement('img');
         img.src = item.imageSrc;
         img.alt = item.title;
-        
+    
         const overlay = document.createElement('div');
         overlay.className = 'overlay';
-
+    
         const title = document.createElement('div');
         title.className = 'item-title';
         title.textContent = item.title;
-
+    
         const description = document.createElement('p');
         description.className = 'item-description hidden';
         description.textContent = item.description;
-
+    
+        // Function to handle episodes creation
+        function createEpisodes(episodes) {
+            const episodesContainer = document.createElement('div');
+            episodesContainer.className = 'item-episodes';
+    
+            episodes.forEach(episode => {
+                if (episode && episode.episode_img) {
+                    const episodeElem = document.createElement('div');
+                    episodeElem.className = 'episode';
+    
+                    const episodeImg = document.createElement('img');
+                    episodeImg.src = episode.episode_img;
+                    episodeImg.alt = episode.episode_name;
+                    episodeElem.appendChild(episodeImg);
+    
+                    const episodeTitle = document.createElement('div');
+                    episodeTitle.className = 'episode-title';
+                    episodeTitle.textContent = episode.episode_name;
+                    episodeElem.appendChild(episodeTitle);
+    
+                    const episodeDescription = document.createElement('p');
+                    episodeDescription.className = 'episode-description hidden';
+                    episodeDescription.textContent = episode.episode_description || 'Default';
+                    episodeElem.appendChild(episodeDescription);
+    
+                    episodesContainer.appendChild(episodeElem);
+                }
+            });
+    
+            return episodesContainer;
+        }
+    
         overlay.appendChild(title);
         rowItem.appendChild(img);
         rowItem.appendChild(overlay);
         rowItem.appendChild(description);
+    
+        // Check if item has episodes and append if available
+        if (item.episodes && item.episodes.length) {
+            const episodesElement = createEpisodes(item.episodes);
+            rowItem.appendChild(episodesElement);
+        }
+    
         itemWrapper.appendChild(rowItem);
-
+    
         return itemWrapper;
     }
+    
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -89,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollContainer.appendChild(leftArrow);
         scrollContainer.appendChild(scrollContent);
         scrollContainer.appendChild(rightArrow);
-    
+        console.log('asd')
         sectionElement.appendChild(title);
         sectionElement.appendChild(scrollContainer);
     
@@ -131,12 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fetch section data from sections.json and start rendering sections
-    fetch('sections.json')
-        .then(response => response.json())
-        .then(data => {
-            renderSections(data.sections);
-            document.dispatchEvent( new CustomEvent('myEvent', {})); // Call after sections are rendered
-        })
-        .catch(error => console.error('Error fetching section data:', error));
+    // Use dataStore to fetch and render sections
+    (async () => {
+        try {
+            const data = await dataStore.fetchData(); // Assuming fetchData() resolves to the data you need
+            renderSections(data.sections); // Adjust according to your data structure
+            document.dispatchEvent(new CustomEvent('onBuilderLoad', {})); // Dispatch your event after rendering
+        } catch (error) {
+            console.error('Error fetching section data:', error);
+        }
+    })();
 });

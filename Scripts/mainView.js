@@ -21,108 +21,11 @@ window.addEventListener('scroll', () => {
     lastTime = currentTime;
 });
 
-function openFocusedView(element, title = '', imageSrc = '', description = '') {
-    // Extract elements and set content as before
-    const imageElement = !imageSrc && element ? element.querySelector('img') : null;
-    const titleElement = !title && element ? element.querySelector('.item-title') : null;
-    const descriptionElement = element.querySelector('.item-description');
-
-    if (!title && titleElement) {
-        title = titleElement.textContent;
-    }
-
-    if (!imageSrc && imageElement) {
-        imageSrc = imageElement.src;
-    }
-
-    if (!description && descriptionElement) {
-        description = descriptionElement.textContent;
-    }
-
-    document.getElementById('focusedTitle').textContent = title;
-    document.getElementById('focusedImage').src = imageSrc;
-    document.getElementById('focusedImage').alt = title;
-    document.getElementById('focusedDescription').textContent = description;
-    document.getElementById('focusedItem').classList.remove('focused-item-hidden');
-    document.body.style.overflow = 'hidden';
-
-    const backdrop = document.querySelector('.focused-backdrop');
-    backdrop.style.display = 'flex'; // Show the backdrop
-
-    // Define final size and scale, then call animateFocusedView
-    const finalWidth = window.innerWidth * 0.8; // Max width, but will be limited to 50% in CSS
-    const finalHeight = window.innerHeight * 0.965; // Based on final styles
-    const initialScale = 0.1; // Starting scale
-    animateFocusedView(element, finalWidth, finalHeight, initialScale);
-}
-
-
-function animateFocusedView(element, finalWidth, finalHeight, initialScale) {
-    const focusedContent = document.querySelector('.focused-content');
-    const rect = element.getBoundingClientRect(); // Get clicked element's dimensions and position
-
-    // Calculate center position for the final state
-    const finalTop = '3.5vh';
-    const finalLeft = '25%'; // Since final width is 50% of the viewport
-
-    // Set initial state mimicking 'scale(0.1)' using size and position
-    focusedContent.style.width = `${finalWidth * initialScale}px`;
-    focusedContent.style.height = `${finalHeight * initialScale}px`;
-    focusedContent.style.top = `${rect.top + (rect.height / 2) - (finalHeight * initialScale / 2)}px`;
-    focusedContent.style.left = `${rect.left + (rect.width / 2) - (finalWidth * initialScale / 2)}px`;
-    focusedContent.style.opacity = '0'; // Start invisible for a fade-in effect
-
-    setTimeout(() => {
-        // Apply the final styles with transition for smooth animation
-        focusedContent.style.transition = 'all 0.5s ease-in-out';
-        focusedContent.style.width = ''; // Set to final width
-        focusedContent.style.height = ''; // Set to final height
-        focusedContent.style.top = finalTop; // Center vertically based on final styles
-        focusedContent.style.left = finalLeft; // Center horizontally
-        focusedContent.style.opacity = '1';
-
-    }, 10); // Short delay to ensure the initial state is rendered first
-}
-
-function closeFocusedView() {
-    const backdrop = document.querySelector('.focused-backdrop');
-    backdrop.style.display = 'none'; // Hide the backdrop
-    const focusedContent = document.querySelector('.focused-content');
-    focusedContent.style.transition = 'none'; // Remove transition to reset without animation
-    document.body.style.overflow = ''; 
-}
-
-
-let clickStartedInside = false;
-
-function setupFocusedModal() {
-    const focusedBackdrop = document.querySelector('.focused-backdrop');
-    const focusedContent = document.querySelector('.focused-content');
-
-    // Check if mousedown started inside focused content
-    focusedContent.addEventListener('mousedown', () => {
-        clickStartedInside = true;
-    });
-
-    // This prevents the modal from closing when clicking inside the content
-    focusedContent.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
-
-    // Reset flag after mouseup occurs anywhere in the document
-    document.addEventListener('mouseup', (event) => {
-        if (!clickStartedInside && !focusedContent.contains(event.target)) {
-            closeFocusedView();
-        }
-        clickStartedInside = false; // Reset for the next action
-    });
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     setupFocusedModal();
 });
 
-document.addEventListener('myEvent', () => {
+document.addEventListener('onBuilderLoad', () => {
     const scrollContainers = document.querySelectorAll('.scroll-container');
 
         scrollContainers.forEach(container => {
@@ -203,4 +106,6 @@ document.addEventListener('myEvent', () => {
             setupArrowListeners(leftArrow, -1);
             setupArrowListeners(rightArrow, 1);
         });
+        console.log("asd")
+        console.log(data2)
 });
