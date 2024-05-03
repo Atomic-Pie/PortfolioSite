@@ -1,0 +1,117 @@
+/* Styling for the watchView container */
+.watchView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Ensures overlay is on top of all other content */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* High z-index to keep it on top */
+    background: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
+}
+
+/* Styling for the background image */
+.watchImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area of the container */
+    filter: brightness(50%); /* Darken the image for text visibility */
+}
+
+/* Central content container */
+.watchContent {
+    display: flex; /* Enables flexbox, which was missing */
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Centers children vertically */
+    position: absolute; /* Positioned relative to overlay */
+    background-color: rgba(0, 0, 0, 0.4); /* Lighter dark background for readability */
+    width: 100%; /* Dynamic width */
+    height: 100%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Soft shadow for depth */
+    text-align: left; /* Aligns text to the center */
+}
+
+/* Nested text container */
+.watchText {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.watching {
+    font-size: 26px; /* Smaller font size for watching label */
+    opacity: 0.75; /* Semi-transparent */
+    letter-spacing: 1px; /* More space between letters */
+    margin-bottom: 5px; /* Small margin for visual separation */
+}
+
+.watchTitle {
+    font-size: 72px; /* Large font size for main title */
+    font-weight: bold; /* Bold for emphasis */
+    margin-top: 5px;
+    margin-bottom: 10px; /* Space before additional details */
+}
+
+.season, .watchEpisodeTitle {
+    font-size: 32px; /* Clear visibility but not overpowering */
+    font-weight: bold; /* Bold for emphasis */
+    margin-bottom: 15px; /* Space between details */
+}
+
+.watchDescription {
+    font-size: 26px; /* Standard readable size */
+    line-height: 1.5; /* Increased line height for readability */
+    opacity: 0.85; /* Slightly transparent for style */
+    max-width: 60%;
+}
+
+.playback-status {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    bottom: 10%; /* 20px from the bottom */
+    right: 4%; /* 20px from the right */
+    text-align: center; /* Centers the text within the element itself */
+    font-size: 26px;
+    font-weight: bold; /* Bold to highlight playback status */
+    opacity: 0.75; /* Semi-transparent */
+}
+
+.nfLoader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 37px 0 0 -25px;
+    width: 75px;
+    height: 75px;
+    opacity: 0.75; /* Semi-transparent */
+  }
+  .nfLoader:after {
+    content: "";
+    background-image: url(https://assets.nflxext.com/en_us/pages/wiplayer/site-spinner.png);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    position: absolute;
+    margin: -6px;
+    width: inherit;
+    height: inherit;
+    animation: nfLoader-spin 1.1s linear infinite,1!important;
+    -webkit-animation: nfLoader-spin 1.1s linear infinite,1!important; 
+  }
+  @keyframes nfLoader-spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes nfLoader-spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }

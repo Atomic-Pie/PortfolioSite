@@ -31,14 +31,17 @@
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
+    top: 25px;
+    right: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 50px;
+    height: 50px;
     border: none;
     color: white;
-    font-size: 24px;
+    font-size: 32px;
     cursor: pointer;
     z-index: 1001;
+    border-radius: 50%
 }
 
 .focused-details {
@@ -258,4 +261,5 @@
 /* Hover effect for episodes */
 .episode:hover {
     background-color: #222;
+    cursor: pointer;
 }

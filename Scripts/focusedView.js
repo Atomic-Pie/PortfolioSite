@@ -57,6 +57,7 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
             episodeImg.src = episode.querySelector('img').src;
             episodeImg.alt = `Thumbnail for episode ${index + 1}`;
             episodeContainer.appendChild(episodeImg);
+            episodeContainer.setAttribute('onclick', "openWatchView(this)");
 
             // Create and append the text container
             const episodeTextContainer = document.createElement('div');
@@ -135,7 +136,7 @@ function setupFocusedModal() {
 
     // Reset flag after mouseup occurs anywhere in the document
     document.addEventListener('mouseup', (event) => {
-        if (!clickStartedInside && !focusedContent.contains(event.target)) {
+        if (!clickStartedInside && !focusedContent.contains(event.target) && !watchIsOpen) {
             closeFocusedView();
         }
         clickStartedInside = false; // Reset for the next action

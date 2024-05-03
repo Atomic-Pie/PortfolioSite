@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="Css/hero.css">
     <link rel="stylesheet" href="Css/sections.css">
     <link rel="stylesheet" href="Css/focused.css">
+    <link rel="stylesheet" href="Css/watch.css">
     <script type="module" src="Scripts/dataStore.js"></script>
     <script type="module" src="Scripts/builder.js"></script>
     <script src="Scripts/focusedView.js"></script>
+    <script src="Scripts/watchView.js"></script>
     <script src="Scripts/mainView.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -35,6 +37,23 @@
             </div>
         </div>
     </header>
+
+    <div class="watchView" style="display: none;">
+        <img src="" alt="" class="watchImage">
+        <div id="loader" class="nfLoader"></div>
+        <div class="watchContent">
+            <div class="watchText">
+                <button class="close-btn" onclick="closeWatchView()">X</button>
+                <p class="watching">You're watching</p>
+                <h1 class="watchTitle"></h1>
+                <p class="season"></p>
+                <p class="watchEpisodeTitle"></p>
+                <p class="watchDescription"></p>
+            </div>
+            <div class="playback-status">Paused</div>
+        </div>
+    </div>    
+
     <div id="focusedItem" class="focused-item-hidden">
         <div class="focused-backdrop">
             <div class="focused-content" onclick="event.stopPropagation()">
@@ -60,7 +79,8 @@
                 <div id="focusedEpisodes" class="focused-episodes"></div>
             </div>
         </div>
-    </div>    
+    </div>
+
     <main class="featured-section" id="home">
         <img src="Images/Csanad.png" alt="Featured Background" class="featured-background">
         <h1 class="featured-title">Csanad Alattyanyi</h1>

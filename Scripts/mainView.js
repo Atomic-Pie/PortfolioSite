@@ -106,6 +106,4 @@ document.addEventListener('onBuilderLoad', () => {
             setupArrowListeners(leftArrow, -1);
             setupArrowListeners(rightArrow, 1);
         });
-        console.log("asd")
-        console.log(data2)
 });
