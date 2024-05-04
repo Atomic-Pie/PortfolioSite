@@ -3,17 +3,66 @@
 }
 
 /* General styles */
-body, html {
+html, body {
+    height: 100%; /* Ensures the root and body cover the full height of the viewport */
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
     background-color: #141414;
     color: white;
     font-family: Arial, sans-serif;
 }
 
+body {
+    display: flex;
+    flex-direction: column; /* Stacks children (like header, main, footer) vertically */
+    min-height: 100%; /* Ensures at least the viewport height */
+}
+
+/* Main content area - add an ID or class to your main content area in HTML if not using <main> */
+main {
+    flex: 1; /* Allows the main content to expand and take available space, pushing the footer down */
+}
+
 /* Styles for the footer */
+.site-footer {
+    background-color: #333; 
+    color: #ccc; 
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+#search-results {
+    padding-top: 100px;
+}
+
+#search-results .scroll-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left; 
+    align-items: center; 
+    padding: 10px;
+    gap: 40px; /* Adjust spacing between items */
+}
+
+#search-results .row-item-wrapper {
+    flex: 1 1 16%; /* Adjusts the basis to near 16.6% for 6 items per row */
+    max-width: 16%; /* Ensures no more than 6 items per line */
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Optional: Adds space between rows */
+}
+
+#search-results .row-item {
+    animation: popUp 0.4s ease-out forwards;
+}
+
 .footer-content a {
     color: #ccc; 
     text-decoration: none; 

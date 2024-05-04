@@ -20,82 +20,98 @@
 <body>
     <header class="navbar">
         <div class="navbar-content">
-            <div class="navbar-left"> <!-- This groups the logo and navigation together -->
+            <div class="navbar-left">
                 <img src="Images/logo.png" alt="Mockflix" class="logo">
                 <nav class="navigation">
-                    <a href="#home" class="nav-link">Home</a>
-                    <a href="#new_popular" class="nav-link">New & Popular</a>
-                    <a href="#achievements" class="nav-link">Achievements</a>
-                    <a href="#projects" class="nav-link">Projects</a>
+                    <a onclick="scrollToSection('home')" class="nav-link">Home</a>
+                    <a onclick="scrollToSection('new_popular')" class="nav-link">New & Popular</a>
+                    <a onclick="scrollToSection('achievements')" class="nav-link">Achievements</a>
+                    <a onclick="scrollToSection('projects')" class="nav-link">Projects</a>
                 </nav>
             </div>
             <div class="navbar-right">
                 <div class="search-container">
-                    <input type="text" id="search" placeholder="Titles, people, genres">
+                    <input oninput="fuzzySearch()" type="text" id="search" placeholder="Titles, people, genres">
                     <button class="search-button"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="watchView" style="display: none;">
-        <img src="" alt="" class="watchImage">
-        <div id="loader" class="nfLoader"></div>
-        <div class="watchContent">
-            <div class="watchText">
-                <button class="close-btn" onclick="closeWatchView()">X</button>
-                <p class="watching">You're watching</p>
-                <h1 class="watchTitle"></h1>
-                <p class="season"></p>
-                <p class="watchEpisodeTitle"></p>
-                <p class="watchDescription"></p>
+    <!-- Main container for page content -->
+    <main>
+        <!-- Featured section now inside a div -->
+        <div class="featured-section" id="home">
+            <img src="Images/Csanad.png" alt="Featured Background" class="featured-background">
+            <h1 class="featured-title">Csanad Alattyanyi</h1>
+            <p class="featured-description">im like super hacker man, so cool and good and yeah super cool again. i do all the hacks coz im smart, no wait, im cool and smart, lol. hacking is like, my thing, you know? cuz im so good at it and all. people always like "wow ur cool" and im like "yeah i know right, im cool and good". i hack things, just like, zap and boom, done, coz im that good and cool, and smart too, did i say cool? yeah, cool and smart, that’s me. totally.</p>
+            <div class="featured-buttons">
+                <button onclick="openFocusedView(this, 'Csanad Alattyanyi', 'Images/temp.jpg', 'Example description')" class="button">More Info</button>
             </div>
-            <div class="playback-status">Paused</div>
         </div>
-    </div>    
 
-    <div id="focusedItem" class="focused-item-hidden">
-        <div class="focused-backdrop">
-            <div class="focused-content" onclick="event.stopPropagation()">
-                <button class="close-btn" onclick="closeFocusedView()">X</button>
-                <div class="image-container">
-                    <img id="focusedImage" src="" alt="Focused Item">
-                    <h2 id="focusedTitle">Title Here</h2>
+        <div class="watchView" style="display: none;">
+            <img src="" alt="" class="watchImage">
+            <div class="watchContent">
+                <div class="watchText">
+                    <button class="close-btn" onclick="closeWatchView()">X</button>
+                    <p class="watching">You're watching</p>
+                    <h1 class="watchTitle"></h1>
+                    <p class="season"></p>
+                    <p class="watchEpisodeTitle"></p>
+                    <p class="watchDescription"></p>
                 </div>
-                <div class="focused-stats">
-                    <span class="focused-match">94% Match</span>
-                    <span class="focused-year">2023</span>
-                    <span class="focused-seasons">3 Episodes</span>
-                </div>
-                <div class="focused-left">
-                    <div class="focused-details">
-                        <p id="focusedDescription">Description here...</p>
+                <div class="playback-status">Paused</div>
+            </div>
+        </div>    
+    
+        <div id="focusedItem" class="focused-item-hidden">
+            <div class="focused-backdrop">
+                <div class="focused-content" onclick="event.stopPropagation()">
+                    <button class="close-btn" onclick="closeFocusedView()">X</button>
+                    <div class="image-container">
+                        <img id="focusedImage" src="" alt="Focused Item">
+                        <h2 id="focusedTitle">Title Here</h2>
                     </div>
+                    <div class="focused-stats">
+                        <span class="focused-match">94% Match</span>
+                        <span class="focused-year">2023</span>
+                        <span class="focused-seasons">3 Episodes</span>
+                    </div>
+                    <div class="focused-left">
+                        <div class="focused-details">
+                            <p id="focusedDescription">Description here...</p>
+                        </div>
+                    </div>
+                    <div class="focused-right">
+                        <p class="focused-genres"><span class="label">Genres:</span> Adult Animation, Action Anime, Anime Series</p>
+                        <p class="focused-attributes"><span class="label">This show is:</span> Offbeat, Witty</p>
+                    </div>
+                    <div id="focusedEpisodes" class="focused-episodes"></div>
                 </div>
-                <div class="focused-right">
-                    <p class="focused-genres"><span class="label">Genres:</span> Adult Animation, Action Anime, Anime Series</p>
-                    <p class="focused-attributes"><span class="label">This show is:</span> Offbeat, Witty</p>
-                </div>
-                <div id="focusedEpisodes" class="focused-episodes"></div>
             </div>
         </div>
-    </div>
 
-    <main class="featured-section" id="home">
-        <img src="Images/Csanad.png" alt="Featured Background" class="featured-background">
-        <h1 class="featured-title">Csanad Alattyanyi</h1>
-        <p class="featured-description">im like super hacker man, so cool and good and yeah super cool again. i do all the hacks coz im smart, no wait, im cool and smart, lol. hacking is like, my thing, you know? cuz im so good at it and all. people always like "wow ur cool" and im like "yeah i know right, im cool and good". i hack things, just like, zap and boom, done, coz im that good and cool, and smart too, did i say cool? yeah, cool and smart, that’s me. totally.</p>
-        <div class="featured-buttons">
-            <button onclick="openFocusedView(this, 'Csanad Alattyanyi', 'Images/temp.jpg', 'Example description')" class="button">More Info</button>
+        <!-- Additional content sections -->
+        <div id="sections">
+            <!-- Sections will be dynamically filled or predefined here -->
         </div>
+
+        <section id="search-results" class="content-row" style="display: none;">
+            <h2 class="row-title">Search results for: <span id="search-term"></span></h2>
+            <div class="scroll-container">
+                <div class="scroll-content"></div>
+            </div>
+        </section>
     </main>
-    <div id="sections"></div>    
+
+    <!-- Footer remains outside the main content area -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <a href="mailto:example@example.com" class="footer-link"><i class="fas fa-envelope"></i> <span class="text">example@example.com</span></a>
+            <a href="https://www.linkedin.com" class="footer-link" target="_blank"><i class="fab fa-linkedin"></i> <span class="text">linkedin.com/in/yourprofile</span></a>
+            <a href="https://www.github.com" class="footer-link" target="_blank"><i class="fab fa-github"></i> <span class="text">github.com/yourusername</span></a>
+        </div>
+    </footer>  
 </body>
-<footer class="site-footer">
-    <div class="footer-content">
-        <a href="mailto:example@example.com" class="footer-link"><i class="fas fa-envelope"></i> <span class="text">example@example.com</span></a>
-        <a href="https://www.linkedin.com" class="footer-link" target="_blank"><i class="fab fa-linkedin"></i> <span class="text">linkedin.com/in/yourprofile</span></a>
-        <a href="https://www.github.com" class="footer-link" target="_blank"><i class="fab fa-github"></i> <span class="text">github.com/yourusername</span></a>
-    </div>
-</footer>  
 </html>

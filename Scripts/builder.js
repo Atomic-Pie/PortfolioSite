@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollContainer.appendChild(leftArrow);
         scrollContainer.appendChild(scrollContent);
         scrollContainer.appendChild(rightArrow);
-        console.log('asd')
         sectionElement.appendChild(title);
         sectionElement.appendChild(scrollContainer);
     
@@ -166,9 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use dataStore to fetch and render sections
     (async () => {
         try {
-            const data = await dataStore.fetchData(); // Assuming fetchData() resolves to the data you need
-            renderSections(data.sections); // Adjust according to your data structure
-            document.dispatchEvent(new CustomEvent('onBuilderLoad', {})); // Dispatch your event after rendering
+            const data = await dataStore.fetchData(); // Fetch data asynchronously
+            renderSections(data.sections); // Render sections after fetching data
+            // All asynchronous operations and DOM updates have completed here
+            document.dispatchEvent(new CustomEvent('onBuilderLoad', {})); // Dispatch the event after everything is done
         } catch (error) {
             console.error('Error fetching section data:', error);
         }
