@@ -173,7 +173,8 @@
 
     .row-title {
         font-size: 18px; /* Adjust title size as needed */
-        margin-bottom: 10px; /* Reduce space between title and content */
+        margin-bottom: 0px; /* Reduce space between title and content */
+        margin-top: 0px; /* Reduce space between title and content */
     }
 
     .row-item-wrapper {
@@ -183,8 +184,8 @@
     }
 
     .row-item {
-        width: 140px; /* Adjust width for vertical rectangles */
-        height: 250px; /* Increase height for vertical rectangles */
+        width: 300px; /* Adjust width for vertical rectangles */
+        height: 200px; /* Increase height for vertical rectangles */
     }
 
     .item-title {

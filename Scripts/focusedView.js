@@ -6,6 +6,8 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     const titleElement = !title && element ? element.querySelector('.item-title') : null;
     const descriptionElement = element.querySelector('.item-description');
     const episodesElement = element.querySelector('.item-episodes'); // Grab episodes container if present
+    const genresElement = element.querySelector('.item-genres');
+    const descriptorsElement = element.querySelector('.item-descriptors');
 
     if (!title && titleElement) {
         title = titleElement.textContent;
@@ -19,10 +21,33 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
         description = descriptionElement.textContent;
     }
 
+    const genres = genresElement ? genresElement.textContent.replace('Genres: ', '') : '';
+    const descriptors = descriptorsElement ? descriptorsElement.textContent.replace('This show is: ', '') : '';
+
     document.getElementById('focusedTitle').textContent = title;
     document.getElementById('focusedImage').src = imageSrc;
     document.getElementById('focusedImage').alt = title;
     document.getElementById('focusedDescription').textContent = description;
+
+    const focusedGenres = document.querySelector('.focused-genres');
+    const focusedDescriptors = document.querySelector('.focused-attributes');
+
+    // Handle genres display
+    if (genres) {
+        focusedGenres.style.display = ''; // Show the genres element
+        focusedGenres.innerHTML = `<span class="label">Genres:</span> ${genres}`;
+    } else {
+        focusedGenres.style.display = 'none'; // Hide the genres element if empty
+    }
+
+    // Handle descriptors display
+    if (descriptors) {
+        focusedDescriptors.style.display = ''; // Show the descriptors element
+        focusedDescriptors.innerHTML = `<span class="label">This show is:</span> ${descriptors}`;
+    } else {
+        focusedDescriptors.style.display = 'none'; // Hide the descriptors element if empty
+    }
+
     document.getElementById('focusedItem').classList.remove('focused-item-hidden');
     document.body.style.overflow = 'hidden';
 
@@ -35,7 +60,6 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
 
     // Create and display episodes if they exist
     if (episodesElement) {
-
         // Add a heading to the episodes section
         const episodesHeading = document.createElement('h2');
         episodesHeading.textContent = 'Episodes';
@@ -45,7 +69,7 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
             // Create the episode container with flex display
             const episodeContainer = document.createElement('div');
             episodeContainer.className = 'episode';
-            episodeContainer.style.display = 'flex'; // Added display flex here
+            episodeContainer.style.display = 'flex';
 
             // Add the episode number
             const episodeNumber = document.createElement('div');
@@ -96,25 +120,25 @@ function animateFocusedView(element, finalWidth, finalHeight, initialScale) {
     const finalLeft = '25%'; // Since final width is 50% of the viewport
 
     // Set initial state mimicking 'scale(0.1)' using size and position
-    focusedContent.style.width = `${finalWidth * initialScale}px`;
-    focusedContent.style.height = `${finalHeight * initialScale}px`;
-    focusedContent.style.top = `${rect.top + (rect.height / 2) - (finalHeight * initialScale / 2)}px`;
-    focusedContent.style.left = `${rect.left + (rect.width / 2) - (finalWidth * initialScale / 2)}px`;
+    focusedContent.style.setProperty('--modal-width', `${finalWidth * initialScale}px`);
+    focusedContent.style.setProperty('--modal-height', `${finalHeight * initialScale}px`);
+    focusedContent.style.setProperty('--modal-top', `${rect.top + (rect.height / 2) - (finalHeight * initialScale / 2)}px`);
+    focusedContent.style.setProperty('--modal-left', `${rect.left + (rect.width / 2) - (finalWidth * initialScale / 2)}px`);
     focusedContent.style.opacity = '0'; // Start invisible for a fade-in effect
-    focusedContent.style.display = 'block'
+    focusedContent.classList.add('focused-content-visible');
 
     setTimeout(() => {
-        focusedIsOpen = true
+        focusedIsOpen = true;
         // Apply the final styles with transition for smooth animation
         focusedContent.style.transition = 'all 0.4s ease-in-out';
-        focusedContent.style.width = ''; // Set to final width
-        focusedContent.style.height = ''; // Set to final height
-        focusedContent.style.top = finalTop; // Center vertically based on final styles
-        focusedContent.style.left = finalLeft; // Center horizontally
+        focusedContent.style.setProperty('--modal-width', `50%`);
+        focusedContent.style.setProperty('--modal-height', `96.5vh`);
+        focusedContent.style.setProperty('--modal-top', finalTop);
+        focusedContent.style.setProperty('--modal-left', finalLeft);
         focusedContent.style.opacity = '1';
-
     }, 10); // Short delay to ensure the initial state is rendered first
 }
+
 
 function closeFocusedView() {
     const backdrop = document.querySelector('.focused-backdrop');
@@ -146,19 +170,20 @@ function closeFocusedView() {
     setTimeout(() => {
         focusedIsOpen = false;
         backdrop.style.display = 'none'; // Hide the backdrop
-        focusedContent.style.display = 'none'; // Hide the focused content
+        focusedContent.classList.remove('focused-content-visible'); // Hide the focused content
         
-        // Reset styles to initial state
+        // Reset styles to initial state using CSS variables
         focusedContent.style.transform = ''; // Reset transform to none
         focusedContent.style.opacity = '1'; // Reset opacity to fully visible
         focusedContent.style.transition = 'none'; // Remove transition to reset without animation
-        focusedContent.style.width = ''; // Ensure width is reset if it was set dynamically
-        focusedContent.style.height = ''; // Ensure height is reset if it was set dynamically
-        focusedContent.style.top = ''; // Reset top position
-        focusedContent.style.left = ''; // Reset left position
+        focusedContent.style.setProperty('--modal-width', '50%'); // Reset width
+        focusedContent.style.setProperty('--modal-height', '96.5vh'); // Reset height
+        focusedContent.style.setProperty('--modal-top', '3.5vh'); // Reset top position
+        focusedContent.style.setProperty('--modal-left', '25%'); // Reset left position
         document.body.style.overflow = ''; // Reset the overflow on the body
     }, 400); // Match the timeout to the duration of the transition
 }
+
 
 function setupFocusedModal() {
     const focusedContent = document.querySelector('.focused-content');

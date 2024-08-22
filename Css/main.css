@@ -11,17 +11,20 @@ html, body {
     background-color: #141414;
     color: white;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column; /* Stacks children (like header, main, footer) vertically */
     min-height: 100%; /* Ensures at least the viewport height */
+    overflow-x: hidden;
 }
 
 /* Main content area - add an ID or class to your main content area in HTML if not using <main> */
 main {
     flex: 1; /* Allows the main content to expand and take available space, pushing the footer down */
+    overflow-x: hidden;
 }
 
 /* Styles for the footer */

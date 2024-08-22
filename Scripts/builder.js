@@ -58,10 +58,30 @@ document.addEventListener('DOMContentLoaded', () => {
             return episodesContainer;
         }
     
+        // Logic to handle genres and descriptors
+        const genres = item.genres ? item.genres.join(', ') : '';
+        const descriptors = item.descriptors ? item.descriptors.join(', ') : '';
+    
+        const genresElement = document.createElement('p');
+        genresElement.className = 'item-genres';
+        genresElement.innerHTML = `<span class="label">Genres:</span> ${genres}`;
+    
+        const descriptorsElement = document.createElement('p');
+        descriptorsElement.className = 'item-descriptors';
+        descriptorsElement.innerHTML = `<span class="label">This show is:</span> ${descriptors}`;
+    
         overlay.appendChild(title);
         rowItem.appendChild(img);
         rowItem.appendChild(overlay);
         rowItem.appendChild(description);
+    
+        // Append genres and descriptors if they exist
+        if (genres) {
+            rowItem.appendChild(genresElement);
+        }
+        if (descriptors) {
+            rowItem.appendChild(descriptorsElement);
+        }
     
         // Check if item has episodes and append if available
         if (item.episodes && item.episodes.length) {

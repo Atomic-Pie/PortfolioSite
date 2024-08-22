@@ -26,58 +26,75 @@
 
 /* Central content container */
 .watchContent {
-    display: flex; /* Enables flexbox, which was missing */
-    flex-direction: column; /* Stacks children vertically */
-    justify-content: center; /* Centers children vertically */
-    position: absolute; /* Positioned relative to overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
     background-color: rgba(0, 0, 0, 0.4); /* Lighter dark background for readability */
-    width: 100%; /* Dynamic width */
+    width: 100%;
     height: 100%;
     box-shadow: 0 8px 16px rgba(0,0,0,0.3); /* Soft shadow for depth */
-    text-align: left; /* Aligns text to the center */
+    text-align: left;
 }
 
 /* Nested text container */
 .watchText {
     padding-left: 10%;
     padding-right: 10%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 100%; /* Limit height to prevent overflow, allowing room for the playback status */
+}
+
+/* Customize scrollbar */
+.watchText::-webkit-scrollbar {
+    width: 8px;
+}
+
+.watchText::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.watchText::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .watching {
-    font-size: 26px; /* Smaller font size for watching label */
-    opacity: 0.75; /* Semi-transparent */
-    letter-spacing: 1px; /* More space between letters */
-    margin-bottom: 5px; /* Small margin for visual separation */
+    font-size: 26px;
+    opacity: 0.75;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 .watchTitle {
-    font-size: 72px; /* Large font size for main title */
-    font-weight: bold; /* Bold for emphasis */
+    font-size: 72px;
+    font-weight: bold;
     margin-top: 5px;
-    margin-bottom: 10px; /* Space before additional details */
+    margin-bottom: 10px;
 }
 
 .season, .watchEpisodeTitle {
-    font-size: 32px; /* Clear visibility but not overpowering */
-    font-weight: bold; /* Bold for emphasis */
-    margin-bottom: 15px; /* Space between details */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 15px;
 }
 
 .watchDescription {
-    font-size: 26px; /* Standard readable size */
-    line-height: 1.5; /* Increased line height for readability */
-    opacity: 0.85; /* Slightly transparent for style */
+    font-size: 26px;
+    line-height: 1.5;
+    opacity: 0.85;
     max-width: 60%;
 }
 
+/* Playback status fixed to bottom-right */
 .playback-status {
-    position: absolute; /* Position relative to the nearest positioned ancestor */
-    bottom: 10%; /* 20px from the bottom */
-    right: 4%; /* 20px from the right */
-    text-align: center; /* Centers the text within the element itself */
+    position: absolute;
+    bottom: 10%;
+    right: 4%;
+    text-align: center;
     font-size: 26px;
-    font-weight: bold; /* Bold to highlight playback status */
-    opacity: 0.75; /* Semi-transparent */
+    font-weight: bold;
+    opacity: 0.75;
 }
 
 .nfLoader {
@@ -87,9 +104,10 @@
     margin: 37px 0 0 -25px;
     width: 75px;
     height: 75px;
-    opacity: 0.75; /* Semi-transparent */
-  }
-  .nfLoader:after {
+    opacity: 0.75;
+}
+
+.nfLoader:after {
     content: "";
     background-image: url(https://assets.nflxext.com/en_us/pages/wiplayer/site-spinner.png);
     background-repeat: no-repeat;
@@ -102,16 +120,38 @@
     margin: -6px;
     width: inherit;
     height: inherit;
-    animation: nfLoader-spin 1.1s linear infinite,1!important;
-    -webkit-animation: nfLoader-spin 1.1s linear infinite,1!important; 
-  }
-  @keyframes nfLoader-spin {
+    animation: nfLoader-spin 1.1s linear infinite, 1!important;
+    -webkit-animation: nfLoader-spin 1.1s linear infinite, 1!important;
+}
+
+@keyframes nfLoader-spin {
     100% {
-      transform: rotate(360deg);
+        transform: rotate(360deg);
     }
-  }
-  @-webkit-keyframes nfLoader-spin {
+}
+
+@-webkit-keyframes nfLoader-spin {
     100% {
-      -webkit-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
     }
-  }
+}
+
+@media (max-width: 600px) {
+    .watchDescription {
+        font-size: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .watchTitle {
+        font-size: 36px;
+    }
+
+    .season, .watchEpisodeTitle {
+        font-size: 20px;
+    }
+
+    .playback-status {
+        display: none;
+    }
+}

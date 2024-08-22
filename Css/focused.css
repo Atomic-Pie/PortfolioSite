@@ -20,14 +20,19 @@
     margin-top: 3.5vh;
     background-color: #141414;
     color: white;
-    width: 50%; /* Adjust if necessary */
-    min-height: 96.5vh; /* Changed from 95% */
+    width: var(--modal-width, 50%); /* Default to 50% but allow dynamic control */
+    min-height: var(--modal-height, 96.5vh); /* Default to 96.5vh but allow dynamic control */
     max-height: fit-content; /* This ensures the modal is not taller than the viewport */
+    top: var(--modal-top, 3.5vh); /* Default top position */
+    left: var(--modal-left, 25%); /* Default left position */
     border-radius: 10px;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    position: absolute;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: row; /* Ensure left and right sections are in the same row */
 }
-
 
 .close-btn {
     position: absolute;
@@ -41,11 +46,7 @@
     font-size: 32px;
     cursor: pointer;
     z-index: 1001;
-    border-radius: 50%
-}
-
-.focused-details {
-    padding: 10px 0 10px 30px;
+    border-radius: 50%;
 }
 
 /* Styling for the image */
@@ -53,7 +54,7 @@
     width: 100%; /* Make the image full width of the focused-content */
     max-height: 60vh; /* Image takes up 60% of the container's height */
     border-radius: 10px;
-    object-fit:cover; /* Cover the area without losing aspect ratio */
+    object-fit: cover; /* Cover the area without losing aspect ratio */
     position: relative; /* Relative position to allow for gradient overlay */
 }
 
@@ -83,8 +84,8 @@
 
 #focusedTitle {
     position: absolute;
-    bottom: 0; 
-    left: 0; 
+    bottom: 0;
+    left: 0;
     transform: translate(0, 0);
     background-color: rgba(0, 0, 0, 0.2);
     color: white; /* Text color */
@@ -113,41 +114,43 @@
     color: white;
 }
 
-.focused-left, .focused-right {
-    width: 50%; /* Take up half the parent's width */
-    display: inline-block; /* Make them side by side */
-    vertical-align: top; /* Align at the top */
+.focused-left,
+.focused-right {
+    display: inline-block; /* Makes them sit on the same line */
+    vertical-align: top; /* Aligns them to the top of their container */
 }
 
 .focused-left {
-    width: 60%; /* Adjust if necessary */
+    width: 60%;
+    padding-left:30px;
+    padding-right: 20px; /* Adds spacing between left and right sections */
+    box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .focused-right {
-    width: 30%; /* Adjust if necessary */
-}
-
-.focused-right {
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    padding: 20px; /* Provide some spacing */
-    margin-left: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    align-items: center; /* Vertically align the content */
+    padding-right: 20px; /* Provide some spacing */
+    width: auto;
     color: white; /* Text color */
     border-radius: 10px; /* Optional: rounds corners */
-    max-width: calc(40% - 2 * (10px) - 20px); /* Adjust width as needed */
-    width: auto;
+    max-width: 40%; /* Adjust width as needed */
     box-sizing: border-box; /* Include padding in width calculations */
+    gap: 10px; /* Space between genres and attributes */
 }
 
-.focused-genres, .focused-attributes {
-    margin-bottom: 15px; /* Spacing between paragraphs */
-    font-size: 16px; /* Adjust based on your design */
+.focused-genres,
+.focused-attributes {
+    padding-top: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    flex: 1; /* Ensure they equally share space */
 }
 
 .focused-genres > .label, .focused-attributes > .label {
-    color: gray; 
-    margin-right: 5px; 
+    color: gray;
+    margin-right: 5px;
+    margin-top: 16px;
 }
 
 .focused-match {
@@ -177,23 +180,21 @@
     overflow-y: auto;
 }
 
-.focused-content {
-    position: absolute;
-    transition: none; /* Initially no transition for instant repositioning */
-    /* No initial width, height, top, left; set by JavaScript */
+.focused-content-visible {
+    display: block;
 }
 
 /* Style the episodes heading */
 #focusedEpisodes h2 {
     color: #fff;
-    padding-left: 30px; /* Or as needed */
-    font-size: 1.5rem; /* Adjust size as needed */
-    margin-bottom: 10px; /* Space after the heading */
+    padding: 0px 30px; /* Or as needed */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 /* Style for the episode container */
 .episode {
-    display: flex; /* Align items in a row */
+    display: flex;
     background-color: #181818;
     color: white;
     padding: 10px;
@@ -201,55 +202,56 @@
     margin-right: 30px;
     border-radius: 4px;
     margin-bottom: 10px;
-    align-items: center; /* Center items vertically */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: adds depth */
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Style for the episode number */
 .episode-number {
     color: white;
     font-weight: bold;
     margin-right: 10px;
     margin-left: 20px;
-    font-size: 1.5rem; /* Larger font size for episode number */
+    font-size: 1.5rem;
 }
 
-/* Style for the episode image */
 .episode img {
-    width: 120px; /* Slightly smaller width for the thumbnail */
-    height: 67px; /* Slightly smaller height, maintain 16:9 aspect ratio */
+    width: 120px;
+    height: 67px;
     object-fit: cover;
     border-radius: 4px;
-    margin-right: 10px; /* Ensure some space between image and text */
+    margin-right: 10px;
 }
 
-/* Style for the text container within an episode */
 .episode-text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Title and description styling */
 .episode-title,
 .episode-description {
-    margin: 0; /* Remove default margin */
+    margin: 0;
 }
 
 .episode-title {
-    font-size: 1rem; /* Size for episode title */
-    color: #fff; /* White color for title */
-    font-weight: bold; /* Make title bold */
-    margin-bottom: 0.5rem; /* Space between title and description */
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
 }
 
 .episode-description {
-    font-size: 0.9rem; /* Smaller size for description */
-    color: #aaa; /* Lighter color for description */
-    max-width: calc(100% - 30px); /* Limit the width of the description */
+    font-size: 0.9rem;
+    color: #aaa;
+    max-width: calc(100% - 30px);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* Scrollbar styling */
 .focused-episodes::-webkit-scrollbar {
     display: none;
 }
@@ -258,8 +260,118 @@
     scrollbar-width: none;
 }
 
-/* Hover effect for episodes */
 .episode:hover {
     background-color: #222;
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    #focusedEpisodes h2 {
+        font-size: 1.4rem;
+        padding: 10px 20px; /* Adjust padding for mobile view */
+        margin: 10px 0px; /* Maintain consistent spacing */
+    }
+
+    .episode{
+        margin: 10px 20px;
+        padding: 5px;
+    }
+
+    .episode-number{
+        margin: 0px 5px;
+    }
+
+    .episode-description{
+        max-width: 100%;
+    }
+
+    .focused-content {
+        width: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin-top: 0;
+        border-radius: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    #focusedImage {
+        border-radius: 0;
+    }
+
+    #focusedTitle {
+        font-size: 1.4rem;
+        padding: 10px 20px;
+    }
+
+    .focused-left,
+    .focused-right,
+    .focused-episodes {
+        width: 100%;
+        padding: 0; /* Remove any padding directly on these containers */
+        margin: 5px 0px;
+    }
+
+    /* Reorder elements to achieve the desired stacking order */
+    .focused-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .focused-content-visible {
+        display: flex; /* Use flex so that your mobile view stacking works */
+    }
+
+    .focused-stats {
+        order: 1; /* Keep stats at the top */
+        padding: 0px 20px;
+        justify-content: space-between;
+    }
+
+    .focused-left {
+        order: 3; /* focused-left should appear below focused-right */
+        padding: 0 20px; /* Apply padding for spacing on the sides */
+        box-sizing: border-box; /* Ensure padding is included in width calculation */
+        width: 100%; /* Make it take up the full width */
+    }
+
+    .focused-details {
+        padding: 0;
+    }
+
+    .focused-episodes {
+        order: 4; /* focused-episodes should appear at the bottom */
+        margin-top: 10px;
+    }
+
+    /* Prevent horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+
+    #focusedDescription {
+        margin: 0;
+        padding: 0; /* Remove any existing padding or margins from the description */
+    }
+
+    .focused-right {
+        order: 2; /* Keep focused-right above focused-left */
+        justify-content: space-between;
+        width: 100%;
+        max-width: 100%;
+        padding: 5px 20px;
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping if content overflows */
+        flex-direction: row; /* Keep genres and attributes on the same row */
+        flex-wrap: wrap; /* Allow wrapping if space is tight */
+        align-items: flex-start;
+    }
+
+    .focused-genres,
+    .focused-attributes {
+        width: 50%; /* Take up 50% of the row in mobile view */
+    }
 }

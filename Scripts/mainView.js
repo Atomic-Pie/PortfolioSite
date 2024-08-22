@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
     const currentTime = Date.now();
     const timeDifference = currentTime - lastTime;
     const scrollDifference = Math.abs(currentScrollY - lastScrollY);
-    const speed = scrollDifference / timeDifference; 
+    const speed = scrollDifference / timeDifference;
 
     
     if (speed > 0.1) { 
@@ -122,68 +122,75 @@ function scrollToSection(sectionId) {
     }
 }
 
+let debounceTimeout;
+
 function fuzzySearch() {
-    const searchInput = document.getElementById('search');
-    const searchText = searchInput.value.toLowerCase();
-    const items = document.querySelectorAll('.row-item');
-    const searchResultsContainer = document.getElementById('search-results');
-    const searchResultsContent = searchResultsContainer.querySelector('.scroll-content');
-    const searchTermDisplay = document.getElementById('search-term');
-    const featuredSection = document.querySelector('.featured-section');
-    const newPopularSection = document.getElementById('new_popular');  // Getting the New & Popular section
-    const otherSections = document.querySelectorAll('.content-row:not(#search-results, #new_popular)');
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+        const searchInput = document.getElementById('search');
+        const searchText = searchInput.value.toLowerCase();
+        const items = document.querySelectorAll('.row-item');
+        const searchResultsContainer = document.getElementById('search-results');
+        const searchResultsContent = searchResultsContainer.querySelector('.scroll-content');
+        const searchTermDisplay = document.getElementById('search-term');
+        const featuredSection = document.querySelector('.featured-section');
+        const newPopularSection = document.getElementById('new_popular');  // Getting the New & Popular section
+        const otherSections = document.querySelectorAll('.content-row:not(#search-results, #new_popular)');
 
-    // Clear previous results in the search results container
-    searchResultsContent.innerHTML = '';
+        // Clear previous results in the search results container
+        searchResultsContent.innerHTML = '';
 
-    let resultsFound = false;
-    const foundItems = new Set();  // To track items and avoid duplicates
+        let resultsFound = false;
+        const foundItems = new Set();  // To track items and avoid duplicates
 
-    items.forEach(item => {
-        if (item.closest('#new_popular, #search-results')) {
-            return; // Skip this iteration
-        }
+        items.forEach(item => {
+            if (item.closest('#new_popular, #search-results')) {
+                return; // Skip this iteration
+            }
 
-        const title = item.querySelector('.item-title').textContent.toLowerCase();
-        const description = item.querySelector('.item-description').textContent.toLowerCase();
-        let itemMatch = title.includes(searchText) || description.includes(searchText);
+            const title = item.querySelector('.item-title').textContent.toLowerCase();
+            const description = item.querySelector('.item-description').textContent.toLowerCase();
+//            const genres = item.querySelector('.item-description').textContent.toLowerCase();
+//            const descriptors = item.querySelector('.item-description').textContent.toLowerCase();
+            let itemMatch = title.includes(searchText) || description.includes(searchText);
 
-        // Searching within episodes
-        const episodes = item.querySelectorAll('.episode');
-        episodes.forEach(episode => {
-            const episodeTitle = episode.querySelector('.episode-title').textContent.toLowerCase();
-            const episodeDescription = episode.querySelector('.episode-description').textContent.toLowerCase();
-            if (episodeTitle.includes(searchText) || episodeDescription.includes(searchText)) {
-                itemMatch = true; // Mark the main item for display if an episode matches
+            // Searching within episodes
+            const episodes = item.querySelectorAll('.episode');
+            episodes.forEach(episode => {
+                const episodeTitle = episode.querySelector('.episode-title').textContent.toLowerCase();
+                const episodeDescription = episode.querySelector('.episode-description').textContent.toLowerCase();
+                if (episodeTitle.includes(searchText) || episodeDescription.includes(searchText)) {
+                    itemMatch = true; // Mark the main item for display if an episode matches
+                }
+            });
+
+            if (itemMatch) {
+                const itemKey = title + description; // Unique key for the main item
+                if (!foundItems.has(itemKey)) {
+                    foundItems.add(itemKey);
+                    const clonedItem = item.cloneNode(true);
+                    clonedItem.style.display = '';
+                    searchResultsContent.appendChild(clonedItem);
+                    resultsFound = true;
+                }
             }
         });
 
-        if (itemMatch) {
-            const itemKey = title + description; // Unique key for the main item
-            if (!foundItems.has(itemKey)) {
-                foundItems.add(itemKey);
-                const clonedItem = item.cloneNode(true);
-                clonedItem.style.display = '';
-                searchResultsContent.appendChild(clonedItem);
-                resultsFound = true;
-            }
+        if (searchText.trim() !== '') {
+            featuredSection.style.display = 'none';
+            newPopularSection.style.display = 'none';
+            otherSections.forEach(section => section.style.display = 'none');
+            searchResultsContainer.style.display = '';
+            searchTermDisplay.textContent = `"${searchInput.value}"`;
+        } else {
+            featuredSection.style.display = '';
+            newPopularSection.style.display = '';
+            otherSections.forEach(section => section.style.display = '');
+            searchResultsContainer.style.display = 'none';
         }
-    });
 
-    if (searchText.trim() !== '') {
-        featuredSection.style.display = 'none';
-        newPopularSection.style.display = 'none';
-        otherSections.forEach(section => section.style.display = 'none');
-        searchResultsContainer.style.display = '';
-        searchTermDisplay.textContent = `"${searchInput.value}"`;
-    } else {
-        featuredSection.style.display = '';
-        newPopularSection.style.display = '';
-        otherSections.forEach(section => section.style.display = '');
-        searchResultsContainer.style.display = 'none';
-    }
-
-    if (!resultsFound && searchText.trim() !== '') {
-        searchResultsContent.innerHTML = `<p>Sorry, we searched everywhere but we did not find any movie or TV show with that title or description.</p>`;
-    }
+        if (!resultsFound && searchText.trim() !== '') {
+            searchResultsContent.innerHTML = `<p>Sorry, we searched everywhere but we did not find any movie or TV show with that title or description.</p>`;
+        }
+    }, 200); // 300ms debounce delay
 }
