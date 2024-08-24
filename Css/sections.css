@@ -205,4 +205,45 @@
     .scroll-arrow {
         display: none; /* Hide arrows if unnecessary on mobile */
     }
+
+    /* Introducing wrapper for hover effect without cropping */
+    .row-item-wrapper {
+        display: inline-flex; /* Align items in a line */
+        padding: 10px; /* Space between items */
+        transition: margin 0.3s ease-out; /* Smooth margin transition */
+    }
+
+    .row-item-wrapper:hover .row-item {
+        transform: scale(1); /* Slightly enlarge, reduce if necessary */
+    }
+    
+    
+    .row-item-wrapper:hover {
+        margin: 0 ; /* Increase space for the hovered item */
+    }
+    
+    /* Display titles on item hover */
+    .row-item-wrapper:hover .row-item-title,
+    .row-item-wrapper:hover .row-item-playbutton {
+        display: none;
+    }
+
+    /* Additional hover effect to reveal title and play button */
+    .row-item:hover .row-item-title,
+    .row-item:hover .row-item-playbutton {
+        display: none; /* Show on hover */
+    }
+
+    .row-item .overlay {
+        background-color:rgba(0, 0, 0, 0.3);
+        width: fit-content;
+        height: fit-content;
+        min-height: 32px;
+        opacity: 1; /* Show overlay on hover */
+        margin-top: auto;
+    }
+
+    .item-title{
+        margin-bottom: 10px;
+    }
 }

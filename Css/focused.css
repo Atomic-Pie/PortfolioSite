@@ -131,10 +131,10 @@
     box-sizing: border-box; /* Ensure padding is included in the width */
     align-items: center; /* Vertically align the content */
     padding-right: 20px; /* Provide some spacing */
-    width: auto;
+    width: 35%;
     color: white; /* Text color */
     border-radius: 10px; /* Optional: rounds corners */
-    max-width: 40%; /* Adjust width as needed */
+    max-width: 35%; /* Adjust width as needed */
     box-sizing: border-box; /* Include padding in width calculations */
     gap: 10px; /* Space between genres and attributes */
 }
@@ -216,6 +216,8 @@
 
 .episode img {
     width: 120px;
+    max-width: 120px;
+    min-width: 120px;
     height: 67px;
     object-fit: cover;
     border-radius: 4px;

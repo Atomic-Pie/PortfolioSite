@@ -113,16 +113,32 @@ document.addEventListener('onBuilderLoad', () => {
 
 function scrollToSection(sectionId) {
     const searchInput = document.getElementById('search');
-    searchInput.value = ''
-    fuzzySearch('')
+    searchInput.value = '';
+    fuzzySearch('');
+
     const sectionElement = document.getElementById(sectionId);
+
     if (sectionElement) {
-        sectionElement.scrollIntoView({ behavior: 'smooth' });
-        history.pushState(null, null, '#' + sectionId);  // Update the URL hash
+        const checkVisibilityAndScroll = () => {
+            if (window.getComputedStyle(sectionElement).display !== 'none') {
+                sectionElement.scrollIntoView({ block: 'center', behavior: 'smooth' });
+                history.pushState(null, null, '#' + sectionId);  // Update the URL hash
+            } else {
+                // If still not visible, check again shortly
+                setTimeout(checkVisibilityAndScroll, 100);
+            }
+        };
+
+        checkVisibilityAndScroll(); // Start the check loop
     }
 }
 
+
 let debounceTimeout;
+
+function getDebounceTime() {
+    return window.innerWidth <= 600 ? 300 : 200; // 350ms for mobile, 200ms for larger screens
+}
 
 function fuzzySearch() {
     clearTimeout(debounceTimeout);
@@ -134,14 +150,14 @@ function fuzzySearch() {
         const searchResultsContent = searchResultsContainer.querySelector('.scroll-content');
         const searchTermDisplay = document.getElementById('search-term');
         const featuredSection = document.querySelector('.featured-section');
-        const newPopularSection = document.getElementById('new_popular');  // Getting the New & Popular section
+        const newPopularSection = document.getElementById('new_popular');
         const otherSections = document.querySelectorAll('.content-row:not(#search-results, #new_popular)');
 
         // Clear previous results in the search results container
         searchResultsContent.innerHTML = '';
 
         let resultsFound = false;
-        const foundItems = new Set();  // To track items and avoid duplicates
+        const foundItems = new Set(); // To track items and avoid duplicates
 
         items.forEach(item => {
             if (item.closest('#new_popular, #search-results')) {
@@ -150,8 +166,6 @@ function fuzzySearch() {
 
             const title = item.querySelector('.item-title').textContent.toLowerCase();
             const description = item.querySelector('.item-description').textContent.toLowerCase();
-//            const genres = item.querySelector('.item-description').textContent.toLowerCase();
-//            const descriptors = item.querySelector('.item-description').textContent.toLowerCase();
             let itemMatch = title.includes(searchText) || description.includes(searchText);
 
             // Searching within episodes
@@ -192,5 +206,12 @@ function fuzzySearch() {
         if (!resultsFound && searchText.trim() !== '') {
             searchResultsContent.innerHTML = `<p>Sorry, we searched everywhere but we did not find any movie or TV show with that title or description.</p>`;
         }
-    }, 200); // 300ms debounce delay
+    }, getDebounceTime());
 }
+
+// Optionally, listen for window resize events to handle cases where the screen size changes dynamically.
+window.addEventListener('resize', () => {
+    // Adjust debounce logic if needed on screen resize
+    clearTimeout(debounceTimeout);
+    fuzzySearch(); // Re-run the search logic with the updated debounce time
+});

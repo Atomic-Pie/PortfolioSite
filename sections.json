@@ -9,45 +9,61 @@
                     "new_popular": "True",
                     "imageSrc": "Images/TUD.png",
                     "title": "TUD Graduation",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Education", "Degree", "Technology"],
+                    "descriptors": ["Specialized", "Qualified", "Certified"],
+                    "description": "I graduated with a BSc (Honours) in Information Technology from Technological University Dublin, specializing in Software Development, with additional training in Cloud Computing and AI/Machine Learning.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Year 1: Foundations in Computing and Critical Skills",
+                            "episode_description": "The first year focused on building foundational skills across computing disciplines. I learned the basics of software development, computer architecture, and critical skills development. Courses like Software Development 1 and Discrete Mathematics 1 laid the groundwork for problem-solving and programming logic. The inclusion of Visual Design & User Experience and Social Media Communications provided insights into user-centered design and digital communication, while courses like Database Fundamentals and Systems Analysis set the stage for understanding how software systems are planned and structured."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Year 2: Expanding Knowledge in Networking and Software Quality",
+                            "episode_description": "The second year introduced more advanced topics in software engineering and network infrastructure. Courses like Software Development 3, Network Fundamentals, and Software Quality Assurance & Testing deepened my knowledge in writing efficient, secure, and maintainable code. The curriculum also introduced web technologies with Client-Side Web Development, while courses such as Advanced Database Technologies enhanced my skills in managing and analyzing data. This year was key in transitioning from theory to practical application, with a focus on networking, information security, and project management."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Year 3: Specialization in Cloud Services, Data Analysis, and Internship",
+                            "episode_description": "Year three marked a deeper dive into specialized topics, particularly in cloud computing, data analysis, and distributed systems. In addition to learning about scalable systems and data-driven solutions, I took an elective in Data Analysis, which introduced me to essential concepts in data preparation, statistical description, and model evaluation. The module covered topics like data summarization, hypothesis testing, and relationships between data attributes. The semester also included a hands-on experiential learning module, where I completed a six-month internship with the Department of Social Protection. This placement allowed me to apply classroom knowledge to real-world challenges, gaining professional experience in software development and cloud infrastructure."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Year 4: Advanced Topics in AI, Cloud, and Industry Applications",
+                            "episode_description": "The final year of the program involved advanced courses in AI, machine learning, and cloud architecture. I worked on an extensive project while studying courses like Enterprise Applications Development, Applied Machine Learning, and Security for the Cloud and IoT. Electives such as Applied Artificial Intelligence and Deep Learning allowed me to explore cutting-edge technologies. The capstone project and modules in computational theory and user experience design tied together everything I had learned, preparing me for both industry challenges and further specialization in technology-driven fields."
+                        }
+                    ]
                 },
                 {
                     "new_popular": "True",
                     "imageSrc": "Images/Hackathon.jpg",
                     "title": "Tallaght Hospital Healthcare Hackathon",
+                    "year":"2022",
+                    "genres": ["Healthcare Innovation", "Team Collaboration", "Problem Solving"],
+                    "descriptors": ["Analytical", "Results-Driven", "Fast-Paced"],
                     "description": "During the 2nd annual Health Hackathon, hosted by TU Dublin and Tallaght University Hospital, I was part of a diverse team that tackled real-world healthcare problems. Our project was a Warfarin Patient App designed for better home monitoring of patients. This 24-hour event was an intensive experience, blending collaboration, creativity, and learning. We received guidance from experts in healthcare, data security, and cloud computing, which helped us shape a patient-centered solution. Our concept was recognized for its practicality and potential for positive impact on patient care. This experience highlighted the importance of teamwork, quick thinking, and applying theoretical knowledge to practical challenges.",
-                    "genres": ["Adult Animation", "Action Anime", "Anime Series"],
-                    "descriptors": ["Offbeat", "Witty"],
                     "episodes": [
                         {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 1",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronicLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                            "episode_img": "Images/Hackathon_1.png",
+                            "episode_name": "Kickoff and Problem Briefing",
+                            "episode_description": "The hackathon kicked off with over 40 students from TU Dublin gathering at the Synergy Centre on the Tallaght campus. The event started with an introduction to the five healthcare challenges set by clinicians from Tallaght University Hospital, followed by insightful sessions on topics like ethics, data privacy, cyber security, and GDPR. These were critical considerations for any healthcare solution we were about to develop. Afterward, we had one-on-one time with each clinician to dive deeper into the specific problems and gather detailed requirements. This session allowed our team to gain a clear understanding of the issues at hand, which was essential before we moved into ideation."
                         },
                         {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 2",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                            "episode_img": "Images/Hackathon_2.png",
+                            "episode_name": "Idea Development and Fast Prototyping",
+                            "episode_description": "After the briefings, our team immediately got to work brainstorming potential solutions. We explored multiple concepts, considering their feasibility, technical requirements, and potential impact on patient care. Through discussion and collaboration, we decided to focus on developing a Warfarin Patient App to help patients monitor their medication at home. The app would provide a simple, patient-friendly interface for tracking dosage, reminders, and medical data, with the goal of improving patient outcomes and reducing hospital visits. We spent the night conducting research, creating wireframes, and leveraging fast prototyping methods using cloud services, as demonstrated earlier by TU Dublin’s technical presentation. This phase was both intense and rewarding as we iterated through ideas and refined our approach, ready to present the next day."
                         },
                         {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 3",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                            "episode_img": "Images/Hackathon_3.png",
+                            "episode_name": "Finalizing the Solution and Presentation",
+                            "episode_description": "With the concept solidified, the focus shifted to execution. We split tasks among the team, with some members working on building a prototype interface while others concentrated on preparing the presentation materials. We developed a working prototype that showcased the core features of the Warfarin Patient App, including real-time tracking, notifications, and an easy-to-use interface. Additionally, we created a detailed poster that visually explained our solution, from the problem statement and research insights to the proposed features and benefits. After hours of polishing both the prototype and the presentation, we presented our solution to a panel of judges, explaining how it directly addresses the needs of patients and healthcare providers. The judges were impressed with our clear, patient-centric approach and the potential impact of the solution."
                         },
                         {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 4",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
-                        },
-                        {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 5",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
-                        },
-                        {
-                            "episode_img": "Images/Hackathon.jpg",
-                            "episode_name": "step 6",
-                            "episode_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic"
+                            "episode_img": "Images/Hackathon_4.jpg",
+                            "episode_name": "Award Ceremony and Reflections",
+                            "episode_description": "The hackathon concluded with an award ceremony where our team was announced as the first-place winners. Our Warfarin Patient App was praised for being 'applicable, relevant, patient-centered, and something that could be implemented in real-world healthcare settings.' The experience of working through the night, overcoming challenges, and collaborating under pressure was immensely valuable. We gained practical insights into the healthcare industry, learned the importance of rapid prototyping, and developed solutions that could genuinely make a difference in patient care. The event not only highlighted the importance of teamwork and quick thinking but also fostered lasting relationships with clinicians, industry experts, and our fellow participants. The recognition was the perfect capstone to an intense but rewarding 24 hours, and we left the event inspired to continue exploring healthcare technology solutions in the future."
                         }
                     ]
                 },
@@ -55,13 +71,72 @@
                     "new_popular": "False",
                     "imageSrc": "Images/nvidia.png",
                     "title": "Nvidia Certificate in Fundamentals of Deep Learning",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Artificial Intelligence", "Machine Learning", "Technical Training"],
+                    "descriptors": ["Hands-On", "Innovative", "Research-Oriented"],
+                    "description": "Completed the 'Fundamentals of Deep Learning' course by Nvidia, focusing on deep learning mechanisms, data augmentation, transfer learning, and real-world AI applications."
                 },
                 {
                     "new_popular": "False",
                     "imageSrc": "Images/HCAIM.jpg",
                     "title": "Blended IP Week at HCAIM",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Artificial Intelligence", "Ethics", "Problem Solving"],
+                    "descriptors": ["Collaborative", "Interactive", "Research-Driven"],
+                    "description": "Participated in the HCAIM Erasmus+ Blended Intensive Programme, gaining practical experience in AI ethics, data bias analysis, and presenting AI solutions.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/HCAIM.jpg",
+                            "episode_name": "Program Introduction",
+                            "episode_description": "The program began with introductory sessions led by industry professionals and academics, setting the stage for problem-solving exercises focused on AI ethics and bias."
+                        },
+                        {
+                            "episode_img": "Images/HCAIM.jpg",
+                            "episode_name": "Group Projects and Discussions",
+                            "episode_description": "Throughout the week, I collaborated with peers to develop research proposals and solutions, addressing challenges related to data bias and ethical AI implementations."
+                        },
+                        {
+                            "episode_img": "Images/HCAIM.jpg",
+                            "episode_name": "Poster Presentations and Feedback",
+                            "episode_description": "Our group presented a detailed poster summarizing our findings and proposed solutions, receiving valuable feedback from experts that helped refine our approach."
+                        },
+                        {
+                            "episode_img": "Images/HCAIM.jpg",
+                            "episode_name": "Program Conclusion and Takeaways",
+                            "episode_description": "The program concluded with reflections on the importance of ethical considerations in AI. I left with enhanced knowledge and a stronger understanding of AI’s societal impacts."
+                        }
+                    ]
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/ResearchProposal.jpg",
+                    "title": "Research in Practice: Boost Your Research Proposal",
+                    "year": "2023",
+                    "genres": ["AI Research", "Problem Solving", "Practical Learning"],
+                    "descriptors": ["Detailed", "Insightful", "Innovative"],
+                    "description": "Completed a week-long intensive program focused on AI, where I developed and refined a research proposal on AI ethics and practical applications, including poster presentations and group problem-solving exercises.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/ResearchProposal.jpg",
+                            "episode_name": "Program Kickoff and Goals",
+                            "episode_description": "The program began with setting research goals and identifying key areas of AI ethics to explore. This initial stage laid the groundwork for in-depth group discussions and collaborative research."
+                        },
+                        {
+                            "episode_img": "Images/ResearchProposal.jpg",
+                            "episode_name": "Collaborative Research and Idea Development",
+                            "episode_description": "Working in groups, we brainstormed and refined research proposals, focusing on ethical AI applications. The collaborative environment helped generate unique insights and ideas."
+                        },
+                        {
+                            "episode_img": "Images/ResearchProposal.jpg",
+                            "episode_name": "Poster Preparation and Presentation",
+                            "episode_description": "We created a research poster summarizing our findings and solutions. The poster was presented to an audience of students and experts, who provided feedback and suggestions for improvement."
+                        },
+                        {
+                            "episode_img": "Images/ResearchProposal.jpg",
+                            "episode_name": "Program Reflection and Next Steps",
+                            "episode_description": "The week concluded with reflections on the research process and ethical implications in AI. I gained valuable skills in research methodology, critical thinking, and presenting complex ideas effectively."
+                        }
+                    ]
                 }
             ]
         },
@@ -72,82 +147,196 @@
             "items": [
                 {
                     "new_popular": "False",
-                    "imageSrc": "Project1.jpg",
+                    "imageSrc": "Images/Notflix.jpg",
                     "title": "Notflix Portfolio",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Web Development", "Portfolio", "Showcase"],
+                    "descriptors": ["Creative", "User-Friendly", "Innovative"],
+                    "description": "Developed a portfolio project styled like a streaming platform to showcase completed works.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/Notflix.jpg",
+                            "episode_name": "Concept and Design",
+                            "episode_description": "The project started with the idea of creating a portfolio styled like a streaming platform, allowing for a unique presentation of my completed works."
+                        },
+                        {
+                            "episode_img": "Images/Notflix.jpg",
+                            "episode_name": "Development Process",
+                            "episode_description": "Using HTML, CSS, and JavaScript, I built the platform, focusing on a user-friendly interface that mimics the navigation and layout of popular streaming services."
+                        },
+                        {
+                            "episode_img": "Images/Notflix.jpg",
+                            "episode_name": "Integrating Projects and Features",
+                            "episode_description": "I integrated my projects into the portfolio, adding interactive elements like search functionality and dynamic content filtering to enhance the user experience."
+                        },
+                        {
+                            "episode_img": "Images/Notflix.jpg",
+                            "episode_name": "Final Deployment and Future Updates",
+                            "episode_description": "The portfolio was deployed and shared across professional networks. Future updates include additional projects and refined user experience based on feedback."
+                        }
+                    ]
                 },
                 {
                     "new_popular": "True",
                     "imageSrc": "Images/Minifig.jpg",
                     "title": "Minifig Collector",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Data Management", "User Interface", "Hobby Projects"],
+                    "descriptors": ["Engaging", "User-Focused", "Data-Driven"],
+                    "description": "A project focused on managing and collecting digital mini-figures with a user-friendly interface.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/Minifig.jpg",
+                            "episode_name": "Project Idea and Planning",
+                            "episode_description": "The project was born out of a passion for collecting and organizing digital mini-figures, leading to the creation of an intuitive management platform."
+                        },
+                        {
+                            "episode_img": "Images/Minifig.jpg",
+                            "episode_name": "Designing the User Interface",
+                            "episode_description": "I designed the interface to be clean and accessible, prioritizing ease of use while incorporating features like filtering, sorting, and search options."
+                        },
+                        {
+                            "episode_img": "Images/Minifig.jpg",
+                            "episode_name": "Database Integration and Functionality",
+                            "episode_description": "The project involved integrating a backend database to store and retrieve collectible data, ensuring a seamless user experience across the platform."
+                        },
+                        {
+                            "episode_img": "Images/Minifig.jpg",
+                            "episode_name": "Launch and Feedback",
+                            "episode_description": "The platform was launched successfully, receiving positive feedback for its design and functionality. Future updates include expanding collectible categories and adding user-driven features."
+                        }
+                    ]
                 },
                 {
                     "new_popular": "False",
                     "imageSrc": "Images/AgileMate.jpg",
                     "title": "Agile Mate",
-                    "description": "Default"
+                    "year": "2023",
+                    "genres": ["Software Development", "Agile Tools", "Collaboration"],
+                    "descriptors": ["Efficient", "Team-Oriented", "Productivity-Focused"],
+                    "description": "Developed Agile Mate, an app designed to notify users of critical issues in Jira and facilitate casual discussion for problem-solving.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/AgileMate.jpg",
+                            "episode_name": "Identifying the Problem",
+                            "episode_description": "The project began with identifying a common challenge in software development: quickly addressing critical issues in Jira without disrupting team flow."
+                        },
+                        {
+                            "episode_img": "Images/AgileMate.jpg",
+                            "episode_name": "Building the Solution",
+                            "episode_description": "Using React Native, Jira SDK, and Firebase, I developed a mobile app that integrates seamlessly with Jira, providing real-time notifications and easy access to discussions."
+                        },
+                        {
+                            "episode_img": "Images/AgileMate.jpg",
+                            "episode_name": "User Experience and Design",
+                            "episode_description": "The app was designed with a focus on user experience, ensuring that key information is easily accessible on mobile screens without overwhelming the user."
+                        },
+                        {
+                            "episode_img": "Images/AgileMate.jpg",
+                            "episode_name": "Launch and Future Improvements",
+                            "episode_description": "The app was deployed and tested in a live environment, with plans for future enhancements such as additional integrations and customizable notification settings."
+                        }
+                    ]
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/FruitClassifier.jpg",
+                    "title": "AI-Powered Fruit Classifier",
+                    "year": "2023",
+                    "genres": ["Deep Learning", "Computer Vision", "Data Augmentation"],
+                    "descriptors": ["Technical", "Innovative", "Data-Driven"],
+                    "description": "Developed a deep learning model that uses computer vision to classify fresh versus rotten fruit.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/FruitClassifier.jpg",
+                            "episode_name": "Project Concept and Planning",
+                            "episode_description": "The idea was to develop an AI model capable of distinguishing between fresh and rotten fruit using computer vision, applying deep learning techniques to achieve accurate results."
+                        },
+                        {
+                            "episode_img": "Images/FruitClassifier.jpg",
+                            "episode_name": "Data Collection and Augmentation",
+                            "episode_description": "I gathered and augmented a dataset of fruit images, applying data augmentation techniques to improve model performance and generalization."
+                        },
+                        {
+                            "episode_img": "Images/FruitClassifier.jpg",
+                            "episode_name": "Model Training and Optimization",
+                            "episode_description": "Using transfer learning and iterative testing, I optimized the model’s accuracy, achieving reliable results in differentiating fresh fruit from rotten samples."
+                        },
+                        {
+                            "episode_img": "Images/FruitClassifier.jpg",
+                            "episode_name": "Deployment and Real-World Applications",
+                            "episode_description": "The model was deployed and tested, demonstrating its potential for real-world use cases in food quality control and supply chain management."
+                        }
+                    ]
                 }
             ]
         },
         {
-            "id": "Test",
+            "id": "jobs",
             "type": "content-row",
-            "title": "Test",
+            "title": "Jobs",
             "items": [
                 {
                     "new_popular": "True",
-                    "imageSrc": "Images/temp.jpg",
-                    "title": "Project Name 1",
-                    "description": "Default"
+                    "imageSrc": "Images/DepartmentOfSocialProtection.jpg",
+                    "title": "Executive Officer (Feb 2022 - Jul 2022)",
+                    "year": "2022",
+                    "genres": ["Web Development", "User Experience", "Government"],
+                    "descriptors": ["Detail-Oriented", "User-Focused", "Adaptable"],
+                    "description": "During my internship at the Department of Social Protection, I played a key role in enhancing the user experience and functionality of two major web platforms, MyWelfare and MyGovID.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_name": "Understanding the Project Requirements",
+                            "episode_description": "My role began with understanding the critical requirements for improving the MyWelfare and MyGovID platforms, focusing on user experience and system reliability."
+                        },
+                        {
+                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_name": "Feature Development and Testing",
+                            "episode_description": "I contributed to the development and testing of new features, ensuring seamless integration and functionality across both platforms, while also identifying and fixing bugs."
+                        },
+                        {
+                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_name": "Collaboration and Milestone Achievement",
+                            "episode_description": "Working closely with the development team, I helped meet project milestones on time, gaining experience in professional collaboration and software development practices."
+                        },
+                        {
+                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_name": "Project Conclusion and Results",
+                            "episode_description": "The internship concluded with the successful deployment of enhanced features, leading to a more user-friendly experience for citizens using the MyWelfare and MyGovID platforms."
+                        }
+                    ]
                 },
                 {
                     "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight2.jpg",
-                    "title": "Project Name 2",
-                    "description": "Default"
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Highlight3.jpg",
-                    "title": "Project Name 3",
-                    "description": "Default"
+                    "imageSrc": "Images/TUD.png",
+                    "title": "Experiential Learning (Jan 2023 - Jun 2023)",
+                    "year": "2023",
+                    "genres": ["Software Development", "Cloud Computing", "Industry Experience"],
+                    "descriptors": ["Practical", "Industry-Connected", "Hands-On"],
+                    "description": "Completed a six-month work placement as part of my degree at a leading ICT company, gaining invaluable experience in software development, networking, and cloud computing.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Placement Introduction and Goals",
+                            "episode_description": "The work placement provided the opportunity to apply my academic knowledge in real-world scenarios, focusing on software development, networking, and cloud computing."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Project Assignments and Skill Development",
+                            "episode_description": "I was assigned to several projects, where I developed and tested software solutions, deepened my cloud computing knowledge, and gained hands-on experience with industry-standard tools."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Professional Networking and Learning",
+                            "episode_description": "The placement also involved building relationships with industry professionals, which has been instrumental in my career growth and understanding of industry expectations."
+                        },
+                        {
+                            "episode_img": "Images/TUD.png",
+                            "episode_name": "Final Reflections and Career Path",
+                            "episode_description": "The experience solidified my career direction, confirming my interest in pursuing further opportunities in software development, cloud computing, and AI/ML technologies."
+                        }
+                    ]
                 }
             ]
         }

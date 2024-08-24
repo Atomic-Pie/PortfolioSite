@@ -1,6 +1,18 @@
 let clickStartedInside = false;
 let focusedIsOpen = false;
 
+// Store match percentages for each title globally
+const matchPercentagesByTitle = {};
+
+// Function to generate or retrieve the match percentage for a specific title
+function getMatchPercentageForTitle(title) {
+    if (!matchPercentagesByTitle[title]) {
+        // Generate a random number between 85 and 99 and store it for the title
+        matchPercentagesByTitle[title] = Math.floor(Math.random() * (99 - 85 + 1)) + 85;
+    }
+    return matchPercentagesByTitle[title];
+}
+
 function openFocusedView(element, title = '', imageSrc = '', description = '') {
     const imageElement = !imageSrc && element ? element.querySelector('img') : null;
     const titleElement = !title && element ? element.querySelector('.item-title') : null;
@@ -8,6 +20,10 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     const episodesElement = element.querySelector('.item-episodes'); // Grab episodes container if present
     const genresElement = element.querySelector('.item-genres');
     const descriptorsElement = element.querySelector('.item-descriptors');
+
+    // Extract the year and episode count from data attributes
+    const year = element.getAttribute('data-year') || 'Unknown'; // Use 'Unknown' if no year is provided
+    const episodeCount = element.getAttribute('data-episode-count') || 0; // Default to 0 if no episodes
 
     if (!title && titleElement) {
         title = titleElement.textContent;
@@ -24,10 +40,18 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     const genres = genresElement ? genresElement.textContent.replace('Genres: ', '') : '';
     const descriptors = descriptorsElement ? descriptorsElement.textContent.replace('This show is: ', '') : '';
 
+    // Retrieve the match percentage for the title
+    const matchPercentage = getMatchPercentageForTitle(title);
+
     document.getElementById('focusedTitle').textContent = title;
     document.getElementById('focusedImage').src = imageSrc;
     document.getElementById('focusedImage').alt = title;
     document.getElementById('focusedDescription').textContent = description;
+
+    // Display the year, episode count, and match percentage
+    document.querySelector('.focused-year').textContent = year;
+    document.querySelector('.focused-seasons').textContent = episodeCount > 0 ? `${episodeCount} Episodes` : 'No Episodes';
+    document.querySelector('.focused-match').textContent = `${matchPercentage}% Match`;
 
     const focusedGenres = document.querySelector('.focused-genres');
     const focusedDescriptors = document.querySelector('.focused-attributes');

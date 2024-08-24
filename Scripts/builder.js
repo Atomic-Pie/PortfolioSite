@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const rowItem = document.createElement('div');
         rowItem.className = 'row-item';
         rowItem.setAttribute('onclick', "openFocusedView(this)");
+        rowItem.setAttribute('data-year', item.year || '');
+        rowItem.setAttribute('data-episode-count', item.episodes ? item.episodes.length : 0); // Store episode count
     
         const img = document.createElement('img');
         img.src = item.imageSrc;
@@ -94,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return itemWrapper;
     }
     
+    
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
@@ -148,11 +151,40 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
+    function createNavButtons(sections) {
+        const navContainer = document.querySelector('.navigation');
+        navContainer.innerHTML = ''; // Clear any existing buttons
+    
+        // Manually add the "Home" and "New & Popular" buttons first
+        const predefinedButtons = [
+            { id: 'home', title: 'Home' },
+            { id: 'new_popular', title: 'New & Popular' }
+        ];
+    
+        predefinedButtons.forEach(section => {
+            const navButton = document.createElement('a');
+            navButton.className = 'nav-link';
+            navButton.textContent = section.title;
+            navButton.setAttribute('onclick', `scrollToSection('${section.id}')`);
+            navContainer.appendChild(navButton);
+        });
+    
+        // Dynamically add the rest of the sections
+        sections.forEach(section => {
+            const navButton = document.createElement('a');
+            navButton.className = 'nav-link';
+            navButton.textContent = section.title;
+            navButton.setAttribute('onclick', `scrollToSection('${section.id}')`);
+            navContainer.appendChild(navButton);
+        });
+    }
+    
+
     // Function to render all sections
     function renderSections(sections) {
         const sectionsDiv = document.getElementById('sections');
         const newPopularItems = []; // Array to hold items marked as 'new_popular'
-
+    
         sections.forEach(section => {
             // Check each item to see if it should also be included in the 'New & Popular' section
             section.items.forEach(item => {
@@ -160,27 +192,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     newPopularItems.push(item);
                 }
             });
-
+    
             // Append the section normally
             sectionsDiv.appendChild(createSection(section));
         });
-
+    
         // Now create and append the 'New & Popular' section if there are any new_popular items
         if (newPopularItems.length > 0) {
-            // Shuffle the new_popular items for random order
             shuffleArray(newPopularItems);
-
+    
             const newPopularSection = {
-                id: 'new_popular', // Assuming 'new_popular' is the ID for the New & Popular section
+                id: 'new_popular',
                 type: 'content-row',
                 title: 'New & Popular',
                 items: newPopularItems
             };
-
+    
             // Insert the 'New & Popular' section at the beginning of the sections div
             sectionsDiv.insertBefore(createSection(newPopularSection), sectionsDiv.firstChild);
         }
+    
+        // Create navigation buttons dynamically based on section titles
+        createNavButtons(sections);
     }
+    
 
     // Use dataStore to fetch and render sections
     (async () => {
