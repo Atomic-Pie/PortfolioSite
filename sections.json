@@ -106,37 +106,6 @@
                             "episode_description": "The program concluded with reflections on the importance of ethical considerations in AI. I left with enhanced knowledge and a stronger understanding of AI’s societal impacts."
                         }
                     ]
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Images/ResearchProposal.jpg",
-                    "title": "Research in Practice: Boost Your Research Proposal",
-                    "year": "2023",
-                    "genres": ["AI Research", "Problem Solving", "Practical Learning"],
-                    "descriptors": ["Detailed", "Insightful", "Innovative"],
-                    "description": "Completed a week-long intensive program focused on AI, where I developed and refined a research proposal on AI ethics and practical applications, including poster presentations and group problem-solving exercises.",
-                    "episodes": [
-                        {
-                            "episode_img": "Images/ResearchProposal.jpg",
-                            "episode_name": "Program Kickoff and Goals",
-                            "episode_description": "The program began with setting research goals and identifying key areas of AI ethics to explore. This initial stage laid the groundwork for in-depth group discussions and collaborative research."
-                        },
-                        {
-                            "episode_img": "Images/ResearchProposal.jpg",
-                            "episode_name": "Collaborative Research and Idea Development",
-                            "episode_description": "Working in groups, we brainstormed and refined research proposals, focusing on ethical AI applications. The collaborative environment helped generate unique insights and ideas."
-                        },
-                        {
-                            "episode_img": "Images/ResearchProposal.jpg",
-                            "episode_name": "Poster Preparation and Presentation",
-                            "episode_description": "We created a research poster summarizing our findings and solutions. The poster was presented to an audience of students and experts, who provided feedback and suggestions for improvement."
-                        },
-                        {
-                            "episode_img": "Images/ResearchProposal.jpg",
-                            "episode_name": "Program Reflection and Next Steps",
-                            "episode_description": "The week concluded with reflections on the research process and ethical implications in AI. I gained valuable skills in research methodology, critical thinking, and presenting complex ideas effectively."
-                        }
-                    ]
                 }
             ]
         },
@@ -147,30 +116,30 @@
             "items": [
                 {
                     "new_popular": "False",
-                    "imageSrc": "Images/Notflix.jpg",
-                    "title": "Notflix Portfolio",
+                    "imageSrc": "Images/Mockflix.png",
+                    "title": "Mockflix Portfolio",
                     "year": "2023",
                     "genres": ["Web Development", "Portfolio", "Showcase"],
                     "descriptors": ["Creative", "User-Friendly", "Innovative"],
                     "description": "Developed a portfolio project styled like a streaming platform to showcase completed works.",
                     "episodes": [
                         {
-                            "episode_img": "Images/Notflix.jpg",
+                            "episode_img": "Images/Mockflix.png",
                             "episode_name": "Concept and Design",
                             "episode_description": "The project started with the idea of creating a portfolio styled like a streaming platform, allowing for a unique presentation of my completed works."
                         },
                         {
-                            "episode_img": "Images/Notflix.jpg",
+                            "episode_img": "Images/Mockflix.png",
                             "episode_name": "Development Process",
                             "episode_description": "Using HTML, CSS, and JavaScript, I built the platform, focusing on a user-friendly interface that mimics the navigation and layout of popular streaming services."
                         },
                         {
-                            "episode_img": "Images/Notflix.jpg",
+                            "episode_img": "Images/Mockflix.png",
                             "episode_name": "Integrating Projects and Features",
                             "episode_description": "I integrated my projects into the portfolio, adding interactive elements like search functionality and dynamic content filtering to enhance the user experience."
                         },
                         {
-                            "episode_img": "Images/Notflix.jpg",
+                            "episode_img": "Images/Mockflix.png",
                             "episode_name": "Final Deployment and Future Updates",
                             "episode_description": "The portfolio was deployed and shared across professional networks. Future updates include additional projects and refined user experience based on feedback."
                         }
@@ -237,37 +206,6 @@
                             "episode_description": "The app was deployed and tested in a live environment, with plans for future enhancements such as additional integrations and customizable notification settings."
                         }
                     ]
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Images/FruitClassifier.jpg",
-                    "title": "AI-Powered Fruit Classifier",
-                    "year": "2023",
-                    "genres": ["Deep Learning", "Computer Vision", "Data Augmentation"],
-                    "descriptors": ["Technical", "Innovative", "Data-Driven"],
-                    "description": "Developed a deep learning model that uses computer vision to classify fresh versus rotten fruit.",
-                    "episodes": [
-                        {
-                            "episode_img": "Images/FruitClassifier.jpg",
-                            "episode_name": "Project Concept and Planning",
-                            "episode_description": "The idea was to develop an AI model capable of distinguishing between fresh and rotten fruit using computer vision, applying deep learning techniques to achieve accurate results."
-                        },
-                        {
-                            "episode_img": "Images/FruitClassifier.jpg",
-                            "episode_name": "Data Collection and Augmentation",
-                            "episode_description": "I gathered and augmented a dataset of fruit images, applying data augmentation techniques to improve model performance and generalization."
-                        },
-                        {
-                            "episode_img": "Images/FruitClassifier.jpg",
-                            "episode_name": "Model Training and Optimization",
-                            "episode_description": "Using transfer learning and iterative testing, I optimized the model’s accuracy, achieving reliable results in differentiating fresh fruit from rotten samples."
-                        },
-                        {
-                            "episode_img": "Images/FruitClassifier.jpg",
-                            "episode_name": "Deployment and Real-World Applications",
-                            "episode_description": "The model was deployed and tested, demonstrating its potential for real-world use cases in food quality control and supply chain management."
-                        }
-                    ]
                 }
             ]
         },
@@ -278,7 +216,7 @@
             "items": [
                 {
                     "new_popular": "True",
-                    "imageSrc": "Images/DepartmentOfSocialProtection.jpg",
+                    "imageSrc": "Images/DSP.png",
                     "title": "Executive Officer (Feb 2022 - Jul 2022)",
                     "year": "2022",
                     "genres": ["Web Development", "User Experience", "Government"],
@@ -286,55 +224,24 @@
                     "description": "During my internship at the Department of Social Protection, I played a key role in enhancing the user experience and functionality of two major web platforms, MyWelfare and MyGovID.",
                     "episodes": [
                         {
-                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_img": "Images/DSP.png",
                             "episode_name": "Understanding the Project Requirements",
                             "episode_description": "My role began with understanding the critical requirements for improving the MyWelfare and MyGovID platforms, focusing on user experience and system reliability."
                         },
                         {
-                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_img": "Images/DSP.png",
                             "episode_name": "Feature Development and Testing",
                             "episode_description": "I contributed to the development and testing of new features, ensuring seamless integration and functionality across both platforms, while also identifying and fixing bugs."
                         },
                         {
-                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_img": "Images/DSP.png",
                             "episode_name": "Collaboration and Milestone Achievement",
                             "episode_description": "Working closely with the development team, I helped meet project milestones on time, gaining experience in professional collaboration and software development practices."
                         },
                         {
-                            "episode_img": "Images/DepartmentOfSocialProtection.jpg",
+                            "episode_img": "Images/DSP.png",
                             "episode_name": "Project Conclusion and Results",
                             "episode_description": "The internship concluded with the successful deployment of enhanced features, leading to a more user-friendly experience for citizens using the MyWelfare and MyGovID platforms."
-                        }
-                    ]
-                },
-                {
-                    "new_popular": "False",
-                    "imageSrc": "Images/TUD.png",
-                    "title": "Experiential Learning (Jan 2023 - Jun 2023)",
-                    "year": "2023",
-                    "genres": ["Software Development", "Cloud Computing", "Industry Experience"],
-                    "descriptors": ["Practical", "Industry-Connected", "Hands-On"],
-                    "description": "Completed a six-month work placement as part of my degree at a leading ICT company, gaining invaluable experience in software development, networking, and cloud computing.",
-                    "episodes": [
-                        {
-                            "episode_img": "Images/TUD.png",
-                            "episode_name": "Placement Introduction and Goals",
-                            "episode_description": "The work placement provided the opportunity to apply my academic knowledge in real-world scenarios, focusing on software development, networking, and cloud computing."
-                        },
-                        {
-                            "episode_img": "Images/TUD.png",
-                            "episode_name": "Project Assignments and Skill Development",
-                            "episode_description": "I was assigned to several projects, where I developed and tested software solutions, deepened my cloud computing knowledge, and gained hands-on experience with industry-standard tools."
-                        },
-                        {
-                            "episode_img": "Images/TUD.png",
-                            "episode_name": "Professional Networking and Learning",
-                            "episode_description": "The placement also involved building relationships with industry professionals, which has been instrumental in my career growth and understanding of industry expectations."
-                        },
-                        {
-                            "episode_img": "Images/TUD.png",
-                            "episode_name": "Final Reflections and Career Path",
-                            "episode_description": "The experience solidified my career direction, confirming my interest in pursuing further opportunities in software development, cloud computing, and AI/ML technologies."
                         }
                     ]
                 }

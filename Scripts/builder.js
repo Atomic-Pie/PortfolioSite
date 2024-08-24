@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
         const genresElement = document.createElement('p');
         genresElement.className = 'item-genres';
-        genresElement.innerHTML = `<span class="label">Genres:</span> ${genres}`;
+        genresElement.innerHTML = `<span class="genres">Genres:</span> ${genres}`;
     
         const descriptorsElement = document.createElement('p');
         descriptorsElement.className = 'item-descriptors';
-        descriptorsElement.innerHTML = `<span class="label">This show is:</span> ${descriptors}`;
+        descriptorsElement.innerHTML = `<span class="descriptors">This show is:</span> ${descriptors}`;
     
         overlay.appendChild(title);
         rowItem.appendChild(img);

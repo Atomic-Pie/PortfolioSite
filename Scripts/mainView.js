@@ -166,7 +166,10 @@ function fuzzySearch() {
 
             const title = item.querySelector('.item-title').textContent.toLowerCase();
             const description = item.querySelector('.item-description').textContent.toLowerCase();
-            let itemMatch = title.includes(searchText) || description.includes(searchText);
+            const genres = item.querySelector('.item-genres').textContent.toLowerCase();
+            const descriptors = item.querySelector('.item-descriptors').textContent.toLowerCase();
+
+            let itemMatch = title.includes(searchText) || description.includes(searchText) || genres.includes(searchText) || descriptors.includes(searchText);
 
             // Searching within episodes
             const episodes = item.querySelectorAll('.episode');
