@@ -152,27 +152,22 @@
                     "year": "2023",
                     "genres": ["Data Management", "User Interface", "Hobby Projects"],
                     "descriptors": ["Engaging", "User-Focused", "Data-Driven"],
-                    "description": "A project focused on managing and collecting digital mini-figures with a user-friendly interface.",
+                    "description": "A collaborative project aimed at managing and organizing a digital LEGO minifigure collection with a focus on user-friendly design and efficient data management. Developed using React, JavaScript, and PHP.",
                     "episodes": [
                         {
                             "episode_img": "Images/Minifig.jpg",
-                            "episode_name": "Project Idea and Planning",
-                            "episode_description": "The project was born out of a passion for collecting and organizing digital mini-figures, leading to the creation of an intuitive management platform."
+                            "episode_name": "Project Concept and Initial Development",
+                            "episode_description": "The project began as a collaborative effort between a friend and me to create a platform for managing LEGO minifigure collections. My friend focused on the styling, while I handled the development using React and JavaScript, starting with the integration of the Rebrickable API to fetch and display basic minifigure data."
                         },
                         {
                             "episode_img": "Images/Minifig.jpg",
-                            "episode_name": "Designing the User Interface",
-                            "episode_description": "I designed the interface to be clean and accessible, prioritizing ease of use while incorporating features like filtering, sorting, and search options."
+                            "episode_name": "Enhancing Functionality with Search and Data Grouping",
+                            "episode_description": "To improve usability, I implemented features like search functionality and the ability to group minifigures by sets. These enhancements, built using JavaScript, allowed users to easily navigate their collections and find specific minifigures quickly."
                         },
                         {
                             "episode_img": "Images/Minifig.jpg",
-                            "episode_name": "Database Integration and Functionality",
-                            "episode_description": "The project involved integrating a backend database to store and retrieve collectible data, ensuring a seamless user experience across the platform."
-                        },
-                        {
-                            "episode_img": "Images/Minifig.jpg",
-                            "episode_name": "Launch and Feedback",
-                            "episode_description": "The platform was launched successfully, receiving positive feedback for its design and functionality. Future updates include expanding collectible categories and adding user-driven features."
+                            "episode_name": "Advanced Data Integration and Backend Optimization",
+                            "episode_description": "I reverse-engineered the Rebrickable app to access an undocumented API for retrieving minifigure prices. Additionally, I developed a simple PHP backend to store minifigure data, reducing reliance on external APIs and significantly improving load times. Automated scripts were created to fetch data and prices efficiently, ensuring the platform could handle large collections smoothly."
                         }
                     ]
                 },
@@ -221,27 +216,52 @@
                     "year": "2022",
                     "genres": ["Web Development", "User Experience", "Government"],
                     "descriptors": ["Detail-Oriented", "User-Focused", "Adaptable"],
-                    "description": "During my internship at the Department of Social Protection, I played a key role in enhancing the user experience and functionality of two major web platforms, MyWelfare and MyGovID.",
+                    "description": "During my internship at the Department of Social Protection, I played a key role in enhancing the user experience and functionality of two major web platforms, MyWelfare and MyGovID. I began with an intensive training program that provided a solid foundation in government operations, followed by joining the MyWelfare development team. My responsibilities included implementing accessibility improvements, developing new features within the ASP.NET MVC framework, and ensuring seamless integration with SQL databases. I also contributed to automated unit testing and bug resolution, which significantly improved system reliability and user satisfaction. Through effective collaboration with a diverse team, I helped achieve key milestones and successfully deployed enhancements that greatly improved the platforms' usability and accessibility. This internship was a pivotal experience, deepening my technical skills and understanding of the vital role technology plays in public service delivery.",
                     "episodes": [
                         {
                             "episode_img": "Images/DSP.png",
-                            "episode_name": "Understanding the Project Requirements",
-                            "episode_description": "My role began with understanding the critical requirements for improving the MyWelfare and MyGovID platforms, focusing on user experience and system reliability."
+                            "episode_name": "General Training and Government Overview",
+                            "episode_description": "The initial phase of my internship involved an intensive two-week training program that introduced me to the operations of the Irish government, with a particular focus on the Department of Social Protection. This training was crucial in providing me with the foundational knowledge necessary to understand the broader context in which MyWelfare and MyGovID operate. I learned about government policies, citizen service standards, and the critical role of technology in public service delivery."
                         },
                         {
                             "episode_img": "Images/DSP.png",
-                            "episode_name": "Feature Development and Testing",
-                            "episode_description": "I contributed to the development and testing of new features, ensuring seamless integration and functionality across both platforms, while also identifying and fixing bugs."
+                            "episode_name": "Joining the MyWelfare Development Team",
+                            "episode_description": "Following the training, I joined the MyWelfare development team where I was immediately involved in ongoing projects. My role included analyzing existing system functionalities and identifying areas for improvement. I quickly became familiar with the ASP.NET MVC framework and the Azure cloud environment, which are integral to the platforms' architecture. This period was marked by a steep learning curve as I adapted to the fast-paced environment and began contributing to real-time development tasks."
+                        },
+                        {
+                            "episode_img": "Images/DSP.png",
+                            "episode_name": "Understanding Project Requirements and User Experience",
+                            "episode_description": "My first project involved making simple UI adjustments focused on improving accessibility for blind and disabled users on the MyWelfare and MyGovID platforms. This task allowed me to get more comfortable with ASP.NET MVC, as I worked extensively within this framework to implement the changes. Additionally, it helped me become familiar with the overall layout and structure of the site, which was crucial for my subsequent work on more complex features. Through this project, I gained valuable experience in ensuring that the platforms were accessible and user-friendly for all users."
+                        },                        
+                        {
+                            "episode_img": "Images/DSP.png",
+                            "episode_name": "Feature Development and SQL Database Utilization",
+                            "episode_description": "My role expanded to include hands-on development, where I contributed to building new features that improved user interactions and service accessibility. During this time, I worked with SQL databases to support these new features, ensuring that data was retrieved and utilized efficiently within the platform.My experience with SQL was integral to ensuring that the new functionalities were seamlessly integrated with the existing data structures."
+                        },                        
+                        {
+                            "episode_img": "Images/DSP.png",
+                            "episode_name": "Automated Unit Testing and Code Quality Assurance",
+                            "episode_description": "To ensure the reliability of new and existing features, I participated in the development and execution of automated unit tests. This experience was instrumental in maintaining high code quality and reducing the likelihood of post-deployment issues. I worked closely with senior developers to implement testing frameworks that provided comprehensive coverage and allowed for more efficient debugging and maintenance."
+                        },
+                        {
+                            "episode_img": "Images/DSP.png",
+                            "episode_name": "Bug Identification and Resolution",
+                            "episode_description": "In addition to feature development, I played a key role in identifying and resolving bugs within the platforms. This involved detailed code reviews, user feedback analysis, and collaboration with the QA team. My efforts in this area helped to significantly reduce system downtimes and improve the overall user experience, ensuring that the platforms could reliably serve the needs of citizens."
                         },
                         {
                             "episode_img": "Images/DSP.png",
                             "episode_name": "Collaboration and Milestone Achievement",
-                            "episode_description": "Working closely with the development team, I helped meet project milestones on time, gaining experience in professional collaboration and software development practices."
+                            "episode_description": "Throughout the internship, I worked closely with a diverse team of developers, designers, and project managers. I contributed to regular team meetings, where we discussed progress, shared insights, and planned upcoming sprints. My ability to communicate effectively and work collaboratively was crucial in meeting key project milestones, particularly under tight deadlines."
                         },
                         {
                             "episode_img": "Images/DSP.png",
-                            "episode_name": "Project Conclusion and Results",
-                            "episode_description": "The internship concluded with the successful deployment of enhanced features, leading to a more user-friendly experience for citizens using the MyWelfare and MyGovID platforms."
+                            "episode_name": "Final Deployment and User Experience Enhancements",
+                            "episode_description": "The internship culminated in the successful deployment of several key features that I had helped develop and test. These enhancements were aimed at improving the user interface and accessibility of the MyWelfare and MyGovID platforms. The positive feedback from users and the successful reduction in user-reported issues were testament to the impact of my contributions. This experience not only solidified my technical skills but also deepened my understanding of the critical role of technology in public service delivery."
+                        },
+                        {
+                            "episode_img": "Images/DSP.png",
+                            "episode_name": "Reflection and Professional Growth",
+                            "episode_description": "Reflecting on my time at the Department of Social Protection, I can confidently say that this internship was a pivotal moment in my professional development. I gained hands-on experience in web development, user experience design, and project management within a government setting. The skills and knowledge I acquired during this period have laid a strong foundation for my future career in software development, particularly in roles that require both technical expertise and a deep understanding of user needs."
                         }
                     ]
                 }
