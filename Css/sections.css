@@ -148,7 +148,7 @@
 
 .scroll-content {
     display: flex;
-    overflow: hidden; /* Keeps the inner row from causing the page to scroll */
+     /* Keeps the inner row from causing the page to scroll */
 }
 
 .row {

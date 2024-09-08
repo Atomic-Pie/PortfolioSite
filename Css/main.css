@@ -53,6 +53,7 @@ main {
     align-items: center; 
     padding: 10px;
     gap: 40px; /* Adjust spacing between items */
+    justify-content: space-evenly;
 }
 
 #search-results .row-item-wrapper {
