@@ -10,9 +10,25 @@
                     "imageSrc": "Images/TUD.png",
                     "title": "TUD Graduation",
                     "year": "2023",
-                    "genres": ["Education", "Degree", "Technology"],
-                    "descriptors": ["Specialized", "Qualified", "Certified"],
-                    "description": "I graduated with a BSc (Honours) in Information Technology from Technological University Dublin, specializing in Software Development, with additional training in Cloud Computing and AI/Machine Learning.",
+                    "genres": [
+                        "Education",
+                        "Computer Science",
+                        "Software Engineering",
+                        "Cloud Computing",
+                        "Artificial Intelligence",
+                        "Machine Learning"
+                    ],
+                    "descriptors": [
+                        "Inspirational",
+                        "Educational",
+                        "Technical",
+                        "Achievement-Focused",
+                        "Academically Rigorous",
+                        "Innovative",
+                        "Comprehensive",
+                        "Future-Oriented"
+                    ],
+                    "description": "I graduated with a Bachelor of Science (Honours) in Computing, Computer Software Engineering from Technological University Dublin, specializing in Software Development, with additional training in Cloud Computing and AI/Machine Learning.",
                     "episodes": [
                         {
                             "episode_img": "Images/TUD.png",
@@ -40,9 +56,29 @@
                     "new_popular": "True",
                     "imageSrc": "Images/Hackathon.jpg",
                     "title": "Tallaght Hospital Healthcare Hackathon",
-                    "year":"2022",
-                    "genres": ["Healthcare Innovation", "Team Collaboration", "Problem Solving"],
-                    "descriptors": ["Analytical", "Results-Driven", "Fast-Paced"],
+                    "year": "2022",
+                    "genres": [
+                        "Software Development",
+                        "Mobile Application Development",
+                        "Healthcare Technology",
+                        "Cloud Computing",
+                        "Data Security",
+                        "Team Leadership",
+                        "Agile Methodologies",
+                        "Rapid Prototyping"
+                    ],
+                    "descriptors": [
+                        "Collaborative",
+                        "Innovative",
+                        "Adaptable",
+                        "Technically Proficient",
+                        "Leadership-Focused",
+                        "Communicative",
+                        "Results-Oriented",
+                        "Fast-Paced",
+                        "Problem-Solving",
+                        "Team-Oriented"
+                    ],
                     "description": "During the 2nd annual Health Hackathon, hosted by TU Dublin and Tallaght University Hospital, I was part of a diverse team that tackled real-world healthcare problems. Our project was a Warfarin Patient App designed for better home monitoring of patients. This 24-hour event was an intensive experience, blending collaboration, creativity, and learning. We received guidance from experts in healthcare, data security, and cloud computing, which helped us shape a patient-centered solution. Our concept was recognized for its practicality and potential for positive impact on patient care. This experience highlighted the importance of teamwork, quick thinking, and applying theoretical knowledge to practical challenges.",
                     "episodes": [
                         {
@@ -72,8 +108,25 @@
                     "imageSrc": "Images/nvidia.png",
                     "title": "Nvidia Certificate in Fundamentals of Deep Learning",
                     "year": "2023",
-                    "genres": ["Artificial Intelligence", "Machine Learning", "Technical Training"],
-                    "descriptors": ["Hands-On", "Innovative", "Research-Oriented"],
+                    "genres": [
+                        "Artificial Intelligence",
+                        "Deep Learning",
+                        "Neural Networks",
+                        "Computer Vision",
+                        "Natural Language Processing",
+                        "Data Science",
+                        "Technical Certification"
+                    ],
+                    "descriptors": [
+                        "Hands-On",
+                        "Innovative",
+                        "Insightful",
+                        "Cutting-Edge",
+                        "Technical",
+                        "Comprehensive",
+                        "Educational",
+                        "Skill-Building"
+                    ],
                     "description": "Completed the 'Fundamentals of Deep Learning' course by Nvidia, focusing on deep learning mechanisms, data augmentation, transfer learning, and real-world AI applications."
                 },
                 {
@@ -81,8 +134,24 @@
                     "imageSrc": "Images/HCAIM.jpg",
                     "title": "Blended IP Week at HCAIM",
                     "year": "2023",
-                    "genres": ["Artificial Intelligence", "Ethics", "Problem Solving"],
-                    "descriptors": ["Collaborative", "Interactive", "Research-Driven"],
+                    "genres": [
+                        "Artificial Intelligence",
+                        "Ethics",
+                        "Problem Solving",
+                        "Data Bias",
+                        "Collaborative Learning",
+                        "Research Presentation"
+                    ],
+                    "descriptors": [
+                        "Collaborative",
+                        "Interactive",
+                        "Research-Driven",
+                        "Ethically Focused",
+                        "Insightful",
+                        "Thought-Provoking",
+                        "Educational",
+                        "Engaging"
+                    ],
                     "description": "Participated in the HCAIM Erasmus+ Blended Intensive Programme, gaining practical experience in AI ethics, data bias analysis, and presenting AI solutions.",
                     "episodes": [
                         {
@@ -119,8 +188,21 @@
                     "imageSrc": "Images/Mockflix.png",
                     "title": "Mockflix Portfolio",
                     "year": "2023",
-                    "genres": ["Web Development", "Portfolio", "Showcase"],
-                    "descriptors": ["Creative", "User-Friendly", "Innovative"],
+                    "genres": [
+                        "Web Development",
+                        "Front-End Design",
+                        "Interactive Media",
+                        "Creative Showcase",
+                        "User Experience"
+                    ],
+                    "descriptors": [
+                        "Innovative",
+                        "Engaging",
+                        "User-Friendly",
+                        "Visually Appealing",
+                        "Interactive",
+                        "Creative"
+                    ],
                     "description": "Developed a portfolio project styled like a streaming platform to showcase completed works.",
                     "episodes": [
                         {
@@ -150,8 +232,21 @@
                     "imageSrc": "Images/Minifig.jpg",
                     "title": "Minifig Collector",
                     "year": "2023",
-                    "genres": ["Data Management", "User Interface", "Hobby Projects"],
-                    "descriptors": ["Engaging", "User-Focused", "Data-Driven"],
+                    "genres": [
+                        "Web Development",
+                        "Data Management",
+                        "Collection Management",
+                        "User Interface Design",
+                        "Hobby Projects"
+                    ],
+                    "descriptors": [
+                        "Engaging",
+                        "User-Friendly",
+                        "Data-Driven",
+                        "Interactive",
+                        "Innovative",
+                        "Customizable"
+                    ],
                     "description": "A collaborative project aimed at managing and organizing a digital LEGO minifigure collection with a focus on user-friendly design and efficient data management. Developed using React, JavaScript, and PHP.",
                     "episodes": [
                         {
@@ -176,8 +271,21 @@
                     "imageSrc": "Images/AgileMate.jpg",
                     "title": "Agile Mate",
                     "year": "2023",
-                    "genres": ["Software Development", "Agile Tools", "Collaboration"],
-                    "descriptors": ["Efficient", "Team-Oriented", "Productivity-Focused"],
+                    "genres": [
+                        "Mobile Application Development",
+                        "Agile Project Management",
+                        "Collaboration Tools",
+                        "Productivity Software",
+                        "Software Development"
+                    ],
+                    "descriptors": [
+                        "Innovative",
+                        "Efficient",
+                        "Team-Oriented",
+                        "Productivity-Boosting",
+                        "Collaborative",
+                        "Time-Saving"
+                    ],
                     "description": "Developed Agile Mate, an app designed to notify users of critical issues in Jira and facilitate casual discussion for problem-solving.",
                     "episodes": [
                         {
@@ -214,8 +322,23 @@
                     "imageSrc": "Images/DSP.png",
                     "title": "Executive Officer (Feb 2022 - Jul 2022)",
                     "year": "2022",
-                    "genres": ["Web Development", "User Experience", "Government"],
-                    "descriptors": ["Detail-Oriented", "User-Focused", "Adaptable"],
+                    "genres": [
+                        "Web Development",
+                        "User Experience Design",
+                        "Government Services",
+                        "Public Sector IT",
+                        "Software Engineering"
+                    ],
+                    "descriptors": [
+                        "Detail-Oriented",
+                        "User-Centric",
+                        "Adaptable",
+                        "Collaborative",
+                        "Impactful",
+                        "Technical",
+                        "Service-Oriented",
+                        "Innovative"
+                    ],
                     "description": "During my internship at the Department of Social Protection, I played a key role in enhancing the user experience and functionality of two major web platforms, MyWelfare and MyGovID. I began with an intensive training program that provided a solid foundation in government operations, followed by joining the MyWelfare development team. My responsibilities included implementing accessibility improvements, developing new features within the ASP.NET MVC framework, and ensuring seamless integration with SQL databases. I also contributed to automated unit testing and bug resolution, which significantly improved system reliability and user satisfaction. Through effective collaboration with a diverse team, I helped achieve key milestones and successfully deployed enhancements that greatly improved the platforms' usability and accessibility. This internship was a pivotal experience, deepening my technical skills and understanding of the vital role technology plays in public service delivery.",
                     "episodes": [
                         {
@@ -266,6 +389,32 @@
                     ]
                 }
             ]
+        }
+    ],
+    "Hero" : [
+        {
+            "new_popular": "True",
+            "imageSrc": "Images/Csanad_1.jpg",
+            "title": "Csanad Alattyanyi",
+            "year":"2001", 
+            "genres": [
+                        "Web Development",
+                        "User Experience Design",
+                        "Government Services",
+                        "Public Sector IT",
+                        "Software Engineering"
+            ],
+            "descriptors": [
+                "Detail-Oriented",
+                "User-Centric",
+                "Adaptable",
+                "Collaborative",
+                "Impactful",
+                "Technical",
+                "Service-Oriented",
+                "Innovative"
+            ],
+            "description": "I am a Junior Full Stack Developer with a passion for exploring complex logic systems and solving challenging problems. My journey into programming began with automating tasks in games using AutoHotKey (AHK), which naturally led to a self-taught progression into Python, JavaScript, and other programming languages. Since then, I’ve honed my skills both through formal education and personal projects.<br><br>I hold a BSc (Honours) in Information Technology from Technological University Dublin, where I specialized in software development. During my studies, I gained hands-on experience with technologies like JavaScript, Python, C#, SQL, and ASP.NET MVC. I’m particularly comfortable with front-end development using JavaScript, HTML/CSS, and React, but I’m now transitioning into full-stack development with a growing interest in back-end technologies like Node.js and SQL.<br><br>My technical background is complemented by real-world experience, including a role as a Tier 2 Integration Support at Expedia, where I worked on troubleshooting and resolving integration issues. I also completed an internship at the Department of Social Protection, contributing to the development and testing of features for the MyWelfare and MyGovID platforms. In this role, I improved the user experience by implementing accessibility features and writing automated unit tests to ensure system reliability. Outside of formal work, I love building side projects and experimenting with new technologies.<br><br>What drives me is the opportunity to combine creativity with problem-solving, and I thrive when exploring interesting, non-standard approaches to technical challenges. If you're looking for a developer who is adaptable, curious, and committed to building efficient, creative solutions, I'd love to connect and explore opportunities to collaborate."
         }
     ]
 }

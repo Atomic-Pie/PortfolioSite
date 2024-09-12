@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         rowItem.setAttribute('data-year', item.year || '');
         rowItem.setAttribute('data-episode-count', item.episodes ? item.episodes.length : 0); // Store episode count
     
+        // Store episodes data as JSON string in dataset
+        if (item.episodes && item.episodes.length > 0) {
+            rowItem.dataset.episodes = JSON.stringify(item.episodes);
+        }
+    
         const img = document.createElement('img');
         img.src = item.imageSrc;
         img.alt = item.title;
@@ -27,38 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const description = document.createElement('p');
         description.className = 'item-description hidden';
         description.textContent = item.description;
-    
-        // Function to handle episodes creation
-        function createEpisodes(episodes) {
-            const episodesContainer = document.createElement('div');
-            episodesContainer.className = 'item-episodes';
-    
-            episodes.forEach(episode => {
-                if (episode && episode.episode_img) {
-                    const episodeElem = document.createElement('div');
-                    episodeElem.className = 'episode';
-    
-                    const episodeImg = document.createElement('img');
-                    episodeImg.src = episode.episode_img;
-                    episodeImg.alt = episode.episode_name;
-                    episodeElem.appendChild(episodeImg);
-    
-                    const episodeTitle = document.createElement('div');
-                    episodeTitle.className = 'episode-title';
-                    episodeTitle.textContent = episode.episode_name;
-                    episodeElem.appendChild(episodeTitle);
-    
-                    const episodeDescription = document.createElement('p');
-                    episodeDescription.className = 'episode-description hidden';
-                    episodeDescription.textContent = episode.episode_description || 'Default';
-                    episodeElem.appendChild(episodeDescription);
-    
-                    episodesContainer.appendChild(episodeElem);
-                }
-            });
-    
-            return episodesContainer;
-        }
     
         // Logic to handle genres and descriptors
         const genres = item.genres ? item.genres.join(', ') : '';
@@ -83,12 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if (descriptors) {
             rowItem.appendChild(descriptorsElement);
-        }
-    
-        // Check if item has episodes and append if available
-        if (item.episodes && item.episodes.length) {
-            const episodesElement = createEpisodes(item.episodes);
-            rowItem.appendChild(episodesElement);
         }
     
         itemWrapper.appendChild(rowItem);
@@ -217,15 +184,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
 
-    // Use dataStore to fetch and render sections
-    (async () => {
-        try {
-            const data = await dataStore.fetchData(); // Fetch data asynchronously
-            renderSections(data.sections); // Render sections after fetching data
-            // All asynchronous operations and DOM updates have completed here
-            document.dispatchEvent(new CustomEvent('onBuilderLoad', {})); // Dispatch the event after everything is done
-        } catch (error) {
-            console.error('Error fetching section data:', error);
-        }
-    })();
+// Use dataStore to fetch and render sections
+(async () => {
+    try {
+        const data = await dataStore.fetchData(); // Fetch data asynchronously
+
+        // Extract Hero section
+        const heroSection = data.Hero[0]; 
+
+        // Update the "More Info" button in the HTML to use hero data
+        document.querySelector('.featured-buttons .button').onclick = () => {
+            openFocusedView(
+                document.querySelector('.featured-buttons .button'), // No specific element is passed
+                heroSection.title, // Title of the Hero
+                heroSection.imageSrc, // Hero image
+                heroSection.description, // Hero description
+                heroSection.year, // Year of the Hero item
+                heroSection.episodes ? heroSection.episodes.length : 0, // Number of episodes if available
+                heroSection.genres ? heroSection.genres.join(', ') : '', // Convert genres array to string
+                heroSection.descriptors ? heroSection.descriptors.join(', ') : '', // Convert descriptors array to string
+                heroSection.episodes // Pass episodes array
+            );
+        };
+
+        // Render other sections
+        renderSections(data.sections); 
+
+        // Dispatch the event after everything is done
+        document.dispatchEvent(new CustomEvent('onBuilderLoad', {})); 
+    } catch (error) {
+        console.error('Error fetching section data:', error);
+    }
+})();
 });

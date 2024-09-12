@@ -13,18 +13,24 @@ function getMatchPercentageForTitle(title) {
     return matchPercentagesByTitle[title];
 }
 
-function openFocusedView(element, title = '', imageSrc = '', description = '') {
+function openFocusedView(
+    element = null,
+    title = '',
+    imageSrc = '',
+    description = '',
+    year = 'Unknown',
+    episodeCount = 0,
+    genres = '',
+    descriptors = '',
+    episodes = null // Changed default to null
+) {
     const imageElement = !imageSrc && element ? element.querySelector('img') : null;
     const titleElement = !title && element ? element.querySelector('.item-title') : null;
-    const descriptionElement = element.querySelector('.item-description');
-    const episodesElement = element.querySelector('.item-episodes'); // Grab episodes container if present
-    const genresElement = element.querySelector('.item-genres');
-    const descriptorsElement = element.querySelector('.item-descriptors');
+    const descriptionElement = !description && element ? element.querySelector('.item-description') : null;
+    const genresElement = !genres && element ? element.querySelector('.item-genres') : null;
+    const descriptorsElement = !descriptors && element ? element.querySelector('.item-descriptors') : null;
 
-    // Extract the year and episode count from data attributes
-    const year = element.getAttribute('data-year') || 'Unknown'; // Use 'Unknown' if no year is provided
-    const episodeCount = element.getAttribute('data-episode-count') || 0; // Default to 0 if no episodes
-
+    // If title, imageSrc, or description aren't passed, extract from the element
     if (!title && titleElement) {
         title = titleElement.textContent;
     }
@@ -37,20 +43,38 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
         description = descriptionElement.textContent;
     }
 
-    const genres = genresElement ? genresElement.textContent.replace('Genres: ', '') : '';
-    const descriptors = descriptorsElement ? descriptorsElement.textContent.replace('This show is: ', '') : '';
+    // Extract genres and descriptors if they are empty and the element is present
+    genres = !genres && genresElement ? genresElement.textContent.replace('Genres: ', '') : genres;
+    descriptors = !descriptors && descriptorsElement ? descriptorsElement.textContent.replace('This show is: ', '') : descriptors;
+
+    // Extract episodes from element's dataset if not provided
+    if (!episodes && element && element.dataset.episodes) {
+        try {
+            episodes = JSON.parse(element.dataset.episodes);
+        } catch (e) {
+            console.error('Error parsing episodes data:', e);
+            episodes = [];
+        }
+    }
+
+    // Ensure episodes is an array
+    episodes = episodes || [];
 
     // Retrieve the match percentage for the title
     const matchPercentage = getMatchPercentageForTitle(title);
 
+    // Replace newline characters with <br> tags
+    description = description.replace(/\n/g, '<br>');
+
+    // Set focused view content
     document.getElementById('focusedTitle').textContent = title;
     document.getElementById('focusedImage').src = imageSrc;
     document.getElementById('focusedImage').alt = title;
-    document.getElementById('focusedDescription').textContent = description;
+    document.getElementById('focusedDescription').innerHTML = description;
 
     // Display the year, episode count, and match percentage
     document.querySelector('.focused-year').textContent = year;
-    document.querySelector('.focused-seasons').textContent = episodeCount > 0 ? `${episodeCount} Episodes` : 'No Episodes';
+    document.querySelector('.focused-seasons').textContent = episodes.length > 0 ? `${episodes.length} Episodes` : 'No Episodes';
     document.querySelector('.focused-match').textContent = `${matchPercentage}% Match`;
 
     const focusedGenres = document.querySelector('.focused-genres');
@@ -83,13 +107,13 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
     focusedEpisodes.innerHTML = '';
 
     // Create and display episodes if they exist
-    if (episodesElement) {
+    if (episodes && episodes.length > 0) {
         // Add a heading to the episodes section
         const episodesHeading = document.createElement('h2');
         episodesHeading.textContent = 'Episodes';
         focusedEpisodes.appendChild(episodesHeading);
 
-        Array.from(episodesElement.children).forEach((episode, index) => {
+        episodes.forEach((episode, index) => {
             // Create the episode container with flex display
             const episodeContainer = document.createElement('div');
             episodeContainer.className = 'episode';
@@ -103,7 +127,7 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
 
             // Create and append the image element
             const episodeImg = document.createElement('img');
-            episodeImg.src = episode.querySelector('img').src;
+            episodeImg.src = episode.episode_img;
             episodeImg.alt = `Thumbnail for episode ${index + 1}`;
             episodeContainer.appendChild(episodeImg);
             episodeContainer.setAttribute('onclick', "openWatchView(this)");
@@ -114,12 +138,12 @@ function openFocusedView(element, title = '', imageSrc = '', description = '') {
 
             const episodeTitle = document.createElement('div');
             episodeTitle.className = 'episode-title';
-            episodeTitle.textContent = episode.querySelector('.episode-title').textContent;
+            episodeTitle.textContent = episode.episode_name;
             episodeTextContainer.appendChild(episodeTitle);
 
             const episodeDescription = document.createElement('p');
             episodeDescription.className = 'episode-description';
-            episodeDescription.textContent = episode.querySelector('.episode-description').textContent;
+            episodeDescription.textContent = episode.episode_description;
             episodeTextContainer.appendChild(episodeDescription);
 
             episodeContainer.appendChild(episodeTextContainer);
