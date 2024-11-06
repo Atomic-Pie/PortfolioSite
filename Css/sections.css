@@ -17,6 +17,8 @@
     overflow-x: scroll; /* Enable horizontal scroll */
     scrollbar-width: none; /* For Firefox */
     -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+    gap: 20px;
+    padding: 5vh 0;
 }
 
 /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -45,11 +47,6 @@
 
 .row-item-wrapper:hover .row-item {
     transform: scale(1.25); /* Slightly enlarge, reduce if necessary */
-}
-
-
-.row-item-wrapper:hover {
-    margin: 0 35px; /* Increase space for the hovered item */
 }
 
 .row-item img {
@@ -181,6 +178,8 @@
         margin: 25px 0px;
         height: auto; /* Adjust height as needed */
         align-items: center;
+        display: inline-flex; /* Align items in a line */
+        transition: margin 0.3s ease-out; /* Smooth margin transition */
     }
 
     .row-item {
@@ -204,13 +203,6 @@
     /* Optional: Adjust or hide scroll arrows for mobile, as swipe scrolling is more common */
     .scroll-arrow {
         display: none; /* Hide arrows if unnecessary on mobile */
-    }
-
-    /* Introducing wrapper for hover effect without cropping */
-    .row-item-wrapper {
-        display: inline-flex; /* Align items in a line */
-        padding: 10px; /* Space between items */
-        transition: margin 0.3s ease-out; /* Smooth margin transition */
     }
 
     .row-item-wrapper:hover .row-item {
