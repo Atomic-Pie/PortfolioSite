@@ -162,7 +162,7 @@
     height: 170px; /* Adjust based on your preference */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px), (max-height: 800px) {
     .content-row {
         margin: 0px 0; /* Reduced margin between rows for better space utilization */
         padding: 0 1%; /* Keep or adjust side padding */
