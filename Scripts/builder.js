@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const rowItem = document.createElement('div');
         rowItem.className = 'row-item';
         rowItem.setAttribute('onclick', "openFocusedView(this)");
-        rowItem.setAttribute('data-year', item.year || '');
+        console.log('Year for item:', item.title, item.year);
+        rowItem.setAttribute('data-year', item.year);
         rowItem.setAttribute('data-episode-count', item.episodes ? item.episodes.length : 0); // Store episode count
     
         // Store episodes data as JSON string in dataset
@@ -191,6 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Extract Hero section
         const heroSection = data.Hero[0]; 
+        //console.log(heroSection);
 
         // Update the "More Info" button in the HTML to use hero data
         document.querySelector('.featured-buttons .button').onclick = () => {
@@ -199,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 heroSection.title, // Title of the Hero
                 heroSection.imageSrc, // Hero image
                 heroSection.description, // Hero description
-                heroSection.year, // Year of the Hero item
+                heroSection.year || 'Unknown', // Year of the Hero item
                 heroSection.episodes ? heroSection.episodes.length : 0, // Number of episodes if available
                 heroSection.genres ? heroSection.genres.join(', ') : '', // Convert genres array to string
                 heroSection.descriptors ? heroSection.descriptors.join(', ') : '', // Convert descriptors array to string

@@ -75,7 +75,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px), (max-height: 800px) {
     /* Hide elements that are not critical */
     .featured-description {
         display: none; /* For instance, hide long descriptions */

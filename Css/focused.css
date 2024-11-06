@@ -267,7 +267,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 600px), (max-height: 800px) {
 
     #focusedEpisodes h2 {
         font-size: 1.4rem;
