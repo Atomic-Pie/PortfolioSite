@@ -387,6 +387,63 @@
                             "episode_description": "Reflecting on my time at the Department of Social Protection, I can confidently say that this internship was a pivotal moment in my professional development. I gained hands-on experience in web development, user experience design, and project management within a government setting. The skills and knowledge I acquired during this period have laid a strong foundation for my future career in software development, particularly in roles that require both technical expertise and a deep understanding of user needs."
                         }
                     ]
+                },
+                {
+                    "new_popular": "True",
+                    "imageSrc": "Images/Expedia.png",
+                    "title": "Tier II Integration Specialist (Nov 2023 - Present)",
+                    "year": "2023",
+                    "genres": [
+                        "API Integration",
+                        "Technical Support",
+                        "Troubleshooting",
+                        "Data Analysis",
+                        "Customer Support",
+                        "Proactive Monitoring"
+                    ],
+                    "descriptors": [
+                        "Analytical",
+                        "Problem-Solver",
+                        "Proactive",
+                        "Collaborative",
+                        "Customer-Focused",
+                        "Detail-Oriented",
+                        "Mentorship",
+                        "Technical Expertise"
+                    ],
+                    "description": "As a Tier II Integration Specialist at Expedia Group, I contribute to the seamless operation of API integrations and customer support services for enterprise property managers and software partners. My role includes resolving complex technical issues, driving product improvements, and leveraging data analysis for strategic decision-making. Working in a Remote capacity from Dublin, I combine technical expertise with proactive monitoring and collaboration to deliver high-quality solutions that enhance the customer experience. This position has allowed me to deepen my skills in API troubleshooting, data-driven problem solving, and team mentorship.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/Expedia_1.png",
+                            "episode_name": "General Training and Onboarding",
+                            "episode_description": "My journey at Expedia Group began with comprehensive onboarding, where I familiarized myself with the company’s API architecture, key tools such as Splunk and Kibana, and the core processes for supporting enterprise partners. This training provided the foundational knowledge required to excel in my role."
+                        },
+                        {
+                            "episode_img": "Images/Expedia_2.png",
+                            "episode_name": "API Integration Troubleshooting",
+                            "episode_description": "A key responsibility in my role is investigating and resolving complex API integration issues. By collaborating with external partners and internal teams, I ensure quick resolutions and minimize service disruptions. This process requires deep technical analysis and effective communication."
+                        },
+                        {
+                            "episode_img": "Images/Expedia_3.png",
+                            "episode_name": "Proactive Monitoring and Issue Prevention",
+                            "episode_description": "To prevent potential service disruptions, I conduct proactive system monitoring using tools like Splunk and Kibana. This involves analyzing system logs and setting up internal alerts, enabling the team to address issues before they impact customers."
+                        },
+                        {
+                            "episode_img": "Images/Expedia_4.png",
+                            "episode_name": "Bug Investigation and Reporting",
+                            "episode_description": "When technical issues arise, I lead thorough investigations, report bugs to development teams, and follow up to ensure timely resolutions. This process involves meticulous analysis and collaboration across departments to maintain high system reliability."
+                        },
+                        {
+                            "episode_img": "Images/Expedia_5.png",
+                            "episode_name": "Customer Support Excellence",
+                            "episode_description": "Delivering exceptional support to enterprise property managers and software partners is a priority. By addressing their technical concerns and providing tailored solutions, I consistently achieve high customer satisfaction scores."
+                        },
+                        {
+                            "episode_img": "Images/Expedia_6.png",
+                            "episode_name": "Team Training and Mentorship",
+                            "episode_description": "I actively contribute to the growth of the team by providing training sessions and mentorship to both internal team members and external partners. This includes sharing best practices, guiding through complex integrations, and promoting a culture of continuous learning."
+                        }
+                    ]
                 }
             ]
         }
