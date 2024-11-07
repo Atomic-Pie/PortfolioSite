@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const rowItem = document.createElement('div');
         rowItem.className = 'row-item';
         rowItem.setAttribute('onclick', "openFocusedView(this)");
-        console.log('Year for item:', item.title, item.year);
         rowItem.setAttribute('data-year', item.year);
         rowItem.setAttribute('data-episode-count', item.episodes ? item.episodes.length : 0); // Store episode count
     

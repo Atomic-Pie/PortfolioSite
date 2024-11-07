@@ -18,7 +18,7 @@ function openFocusedView(
     title = '',
     imageSrc = '',
     description = '',
-    year = 'Unknown',
+    year = '',
     episodeCount = 0,
     genres = '',
     descriptors = '',
@@ -41,6 +41,10 @@ function openFocusedView(
 
     if (!description && descriptionElement) {
         description = descriptionElement.textContent;
+    }
+    
+    if (!year && element) {
+        year = element.dataset.year || 'Unknown';
     }
 
     // Extract genres and descriptors if they are empty and the element is present
