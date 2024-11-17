@@ -132,47 +132,94 @@
                 {
                     "new_popular": "False",
                     "imageSrc": "Images/HCAIM.jpg",
-                    "title": "Blended IP Week at HCAIM",
+                    "title": "Research in Practice; boost your Research Proposal at HCAIM",
                     "year": "2023",
                     "genres": [
                         "Artificial Intelligence",
                         "Ethics",
-                        "Problem Solving",
-                        "Data Bias",
+                        "Research Proposal",
                         "Collaborative Learning",
-                        "Research Presentation"
+                        "Intercultural Exchange",
+                        "Problem Solving",
+                        "Teamwork"
                     ],
                     "descriptors": [
                         "Collaborative",
-                        "Interactive",
+                        "International",
                         "Research-Driven",
                         "Ethically Focused",
-                        "Insightful",
-                        "Thought-Provoking",
+                        "Engaging",
+                        "Innovative",
                         "Educational",
-                        "Engaging"
+                        "Interactive"
                     ],
-                    "description": "Participated in the HCAIM Erasmus+ Blended Intensive Programme, gaining practical experience in AI ethics, data bias analysis, and presenting AI solutions.",
+                    "description": "Participated in the HCAIM Erasmus+ Blended Intensive Programme, an international educational experience focusing on human-centered AI research. Collaborated with peers and faculty from Ireland, Hungary, Italy, and the Netherlands to tackle AI challenges through ethical and technical lenses. The program combined online preparation with a 5-day intensive in Utrecht, Netherlands, culminating in research proposal development and presentations.",
                     "episodes": [
                         {
                             "episode_img": "Images/HCAIM.jpg",
-                            "episode_name": "Program Introduction",
-                            "episode_description": "The program began with introductory sessions led by industry professionals and academics, setting the stage for problem-solving exercises focused on AI ethics and bias."
+                            "episode_name": "Online Preparation and Research Selection",
+                            "episode_description": "Before the in-person session, participants engaged in virtual learning from December 2022 to January 2023. This phase included research topic selection, consultations with supervisors, and preparatory assignments designed to facilitate the intensive workshops."
                         },
                         {
                             "episode_img": "Images/HCAIM.jpg",
-                            "episode_name": "Group Projects and Discussions",
-                            "episode_description": "Throughout the week, I collaborated with peers to develop research proposals and solutions, addressing challenges related to data bias and ethical AI implementations."
+                            "episode_name": "Workshops and Lectures in Utrecht",
+                            "episode_description": "The 5-day on-site program featured interactive workshops, expert-led lectures, and breakout sessions with academic mentors and industry professionals. Highlights included a lecture on 'Ethical Aspects in Research Topics' by Prof. Mihály Héder and collaborative sessions to refine research questions."
                         },
                         {
                             "episode_img": "Images/HCAIM.jpg",
-                            "episode_name": "Poster Presentations and Feedback",
-                            "episode_description": "Our group presented a detailed poster summarizing our findings and proposed solutions, receiving valuable feedback from experts that helped refine our approach."
+                            "episode_name": "Team Collaboration and Proposal Development",
+                            "episode_description": "Worked in international teams to draft and refine research proposals. Activities included brainstorming sessions, peer reviews, and coaching from industry and academic mentors. These interactions strengthened both technical skills and intercultural communication."
                         },
                         {
                             "episode_img": "Images/HCAIM.jpg",
-                            "episode_name": "Program Conclusion and Takeaways",
-                            "episode_description": "The program concluded with reflections on the importance of ethical considerations in AI. I left with enhanced knowledge and a stronger understanding of AI’s societal impacts."
+                            "episode_name": "Poster Presentations and Final Event",
+                            "episode_description": "Concluded with a poster presentation session, showcasing research proposals to an audience of students, faculty, and industry stakeholders. Received constructive feedback and a certificate of participation. The final farewell reception celebrated the success of the program."
+                        }
+                    ]
+                },
+                {
+                    "new_popular": "False",
+                    "imageSrc": "Images/LLM_Research.png",
+                    "title": "Machine vs Machine: Large Language Models in Applied Machine Learning",
+                    "year": "2024",
+                    "genres": [
+                        "Artificial Intelligence",
+                        "Education",
+                        "Machine Learning",
+                        "Large Language Models",
+                        "Academic Integrity",
+                        "Assessment Design"
+                    ],
+                    "descriptors": [
+                        "Innovative",
+                        "Collaborative",
+                        "Insightful",
+                        "Research-Driven",
+                        "Educational",
+                        "Technically Focused",
+                        "Impactful"
+                    ],
+                    "description": "Contributed to a pioneering research study published in the RED. Revista de Educación a Distancia, analyzing the performance of Large Language Models (LLMs) in final-year undergraduate machine learning exams. The research spanned six years of exams (both open- and closed-book formats), evaluating LLM effectiveness, comparison with student performance, and the efficacy of AI-detection tools.",
+                    "episodes": [
+                        {
+                            "episode_img": "Images/LLM_Research.png",
+                            "episode_name": "Exploring LLM Performance",
+                            "episode_description": "Conducted an analysis of LLM responses to open- and closed-book exam questions, comparing their performance to student submissions. The study identified strengths and weaknesses across various question types, providing insights into curriculum and assessment design."
+                        },
+                        {
+                            "episode_img": "Images/LLM_Research.png",
+                            "episode_name": "AI Detection and Academic Integrity",
+                            "episode_description": "Evaluated AI-detection tools' ability to identify LLM-generated responses, including tampered outputs. This work explored the challenges of maintaining academic integrity in the face of evolving AI technologies."
+                        },
+                        {
+                            "episode_img": "Images/LLM_Research.png",
+                            "episode_name": "Collaborative Staff-Student Research",
+                            "episode_description": "Participated in a staff-student partnership model, contributing to experimental design, data collection, and result analysis. This collaboration provided actionable insights into AI's role in education and assessment methodologies."
+                        },
+                        {
+                            "episode_img": "Images/LLM_Research.png",
+                            "episode_name": "Implications for Education",
+                            "episode_description": "The findings informed recommendations for future exam formats and question designs, ensuring fairness to students while challenging AI systems. This research has broader implications for disciplines beyond machine learning."
                         }
                     ]
                 }
